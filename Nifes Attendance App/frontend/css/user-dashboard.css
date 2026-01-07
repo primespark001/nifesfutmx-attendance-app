@@ -1,0 +1,309 @@
+
+
+.tab1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+    font-size: .9em;
+}
+.dsec1{
+    flex: 1 0 55%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+}
+.dsec1 .dashservice{
+    height: 100%;
+    display: flex;
+}
+.dsec1 .dashtodayservice{
+    width: 100%;
+    height: 100%;
+    max-width: 20em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    overflow: hidden;
+    background: var(--shade);
+    border: 1px solid var(--transborder);
+}
+.dsec1 .dashtodayservice img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2em;
+    box-shadow: 0 3px 10px var(--shadowcolor);
+}
+.dsec1 div ul{
+    list-style: none;
+    padding: 1em;
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.dsec1 div ul li{
+    flex: 1 0 40%;
+    padding: 1em;
+    gap: .4em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+    font-size: .9em;
+}
+.dsec1 div ul li b{
+    width: fit-content;
+    padding: .3em .7em;
+    color: #fff;
+    background: var(--nifesgrad);
+    border-radius: 7px;
+    font-size: .9em;
+    font-weight: 500;
+}
+.dsec1 div ul li span{
+    margin: 0;
+}
+
+.dsec2{
+    flex: 1 0 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    overflow: hidden;
+}
+.attend, .service{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 100%;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+}
+.attend .con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .3em;
+    width: 90%;
+    height: 100%;
+    margin: 1em auto;
+}
+.attend .bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 2em;
+    height: 100%;
+    background: var(--transborder);
+    border-radius:  10px;
+}
+.attend .con .value{
+    width: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-weight: bold;
+    font-size: .8em;
+}
+.attend .bar .barvalue{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    color: var(--backgroundcolor);
+    background: var(--nifesgrad);
+    border-radius: 10px;
+    height: 100%;
+    width: 0%;
+    font-size: 1em;
+    font-weight: 600;
+}
+.attend .con .cali{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: .8em;
+    margin-bottom: 1em;
+}
+.attend .con ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+}
+.attend .con ul li{
+    flex: 1 0 40%;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+.attend .con ul li:first-child{
+    flex: 1 0 100%;
+}
+.attend .con ul li b{
+    height: fit-content;
+    font-size: .7em;
+    padding: .3em .7em;
+    border-radius: 7px;
+    background: var(--nifesgrad);
+    color: #fff;
+    font-weight: normal;
+}
+
+.service{
+    min-height: 20em;
+}
+.servicecon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.servicecon div{
+    flex: 1 0 100%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    box-shadow: 3px 3px 10px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+    animation: autoscroll-3items 20s infinite ease;
+}
+.servicecon div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.servicecon div section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5em 1em 1em;
+    font-size: .8em;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    background: linear-gradient(to bottom,
+    #00000000,
+    #000000ff);
+}
+.servicecon div section b{
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.servicecon div section code{
+    padding: .3em .8em;
+    background: var(--nifesgrad);
+    border-radius: 7px;
+    font-size: .9em;
+    width: fit-content;
+}
+
+
+
+.tab2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+    font-size: .9em;
+}
+
+.announce, .memberscon{
+    flex: 1 0 47%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow: hidden;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+}
+
+.slidecon{
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+}
+.slidecon .card{
+    width: 13em;
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 10em;
+    overflow: hidden;
+    border-radius: 1.5em;
+    padding: .5em;
+    border: 1px solid var(--bordercolor);
+}
+.slidecon .card a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px var(--shadowcolor);
+    border-radius: 1em;
+    overflow: hidden;
+}
+.slidecon .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.slidecon .card .text{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size: .8em;
+    padding: 1em;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info{
+    margin: auto;
+    padding: 1em;
+    width: 90%;
+    max-width: 20em;
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.profilecard{
+    flex: 1 0 100%;
+    scroll-snap-align: center;
+}

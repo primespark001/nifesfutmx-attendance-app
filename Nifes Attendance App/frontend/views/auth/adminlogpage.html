@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+        </div>
+        <p> NIFES FUTMX </p>
+        <a href="/" title="Home"><i class="fas fa-home"></i></a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="div">        
+            <div class="top">
+                <h2>Admin</h2>
+                <p>Log in to access your dashboard.</p>
+            </div>
+            <form action="" method="post">
+                <div>
+                    <label for="adminlogusername">Admin Username</label>
+                    <input type="text" name="adminlogusername" id="adminlogusername" placeholder="e.g. #admin_presi#" required>
+                </div>
+                <div>
+                    <label for="adminlogpswd">Password</label>
+                    <input type="password" name="adminlogpswd" id="adminlogpswd" placeholder="e.g. *_*" minlength="8" required>
+                </div>
+                <div>
+                    <button type="button" onclick="adminLogin()">Login</button>
+                    <a href="/auth/login" class="alink">Login as member</a>
+                </div>
+            </form>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <p class="last">&copy; NIFES FUT Minna - All rights reserved.</p>
+            <p class="last">Building tomorrow's leaders today...</p>
+        </footer>
+    </main>
+
+
+    <div class="loading" id="loading">
+        <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+        <div class="rotor"></div>
+    </div>
+    <p class="mess" id="mess">
+        <i class="fas fa-circle-check"></i>
+        <span>Registration Successful</span>
+    </p>
+
+
+    <script src="../../js/auth.js"></script>
+</body>
+</html>

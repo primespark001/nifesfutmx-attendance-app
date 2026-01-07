@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Don't forget to remove this link -->
+    <link rel="stylesheet" href="../../../../web-icons/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../../../../web-icons/bootstrap-5.3.7-dist/icons-1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../css/admingeneral.css">
+    <link rel="stylesheet" href="../../css/admin-dashboard.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="#" class="links activenav" title="ad-dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="links" title="ad-services"><i class="bi bi-bar-chart-line-fill"></i><span>Services</span></a>
+            <a href="#" class="links" title="ad-announcements"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="#" class="links" title="ad-members"><i class="bi bi-people-fill"></i><span>Members</span></a>            
+            <div class="quickactions">
+                <a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>Log out</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="top">
+            <h3>Admin Dashboard</h3>
+            <p id="admin-id"></p>
+        </div>
+        <section class="section">
+            <!-- Dashboard -->
+            <div class="content" id="dashboard">
+                <div class="breadcrumb">
+                    <a href="#dashboard">Dashboard</a>
+                </div>
+                <div class="main">
+                    <h4>Welcome Admin</h4>
+                    <div class="overview">                     
+                        <div>
+                            <b>Members</b>
+                            <h2>
+                                <i class="fas fa-users"></i>
+                                <p id="ovmem">0</p>
+                            </h2>
+                            <a href="#" class="links" title="ad-members">View</a>
+                        </div>
+                        <div>
+                            <b>Birthdays</b>
+                            <h2>
+                                <i class="bi bi-cake2-fill"></i>
+                                <p id="ovbirth">0</p>
+                            </h2>
+                            <a href="#" class="links" title="ad-members">View</a>
+                        </div>
+                        <div>
+                            <b>Services</b>
+                            <h2>
+                                <i class="bi bi-calendar-day-fill"></i>
+                                <p id="ovserv">0</p>
+                            </h2>
+                            <a href="#" class="links" title="ad-services">View</a>
+                        </div>
+                        <div>
+                            <b>Announcements</b>
+                            <h2>
+                                <i class="bi bi-megaphone-fill"></i>
+                                <p id="ovannounce">0</p>
+                            </h2>
+                            <a href="#" class="links" title="ad-announcements">View</a>
+                        </div>                                                                
+                    </div>
+
+                    <div class="dsec1">
+                        <div class="sectop">
+                            <b><i class="bi bi-calendar2-day-fill"></i>&nbsp;&nbsp;&nbsp;Today's Service</b>
+                            <a href="#" class="links" title="ad-services#create"><i class="fas fa-plus"></i>&nbsp;&nbsp;Create</a>
+                        </div>
+                        <div class="secbottom" id="dashservice">
+                            <div class="noconcard">
+                                <i class="nocon bi bi-ban"></i>
+                                <i class="nocon">No contents.</i>
+                            </div>
+                            <!-- <div class="dservice">
+                                <a href="#" title="Service"><img src="../../resources/celeserviceblue.jpg" alt="Service"></a>
+                                <div>
+                                    <p><b>Title</b>  <span>Celebration Service</span></p>
+                                    <p><b>Date</b> <span>Sun. 2nd March 2025</span></p>
+                                    <p><b>Time</b> <span>2:30PM</span></p>
+                                    <p><b>Attendance</b> <span>200/250</span></p>
+                                    <p><b>Rate</b> <span>80%</span></p>
+                                    <p><b>Status</b> <span class="active">ACTIVE</span></p>
+                                </div>                        
+                            </div>     -->
+                            <a href="ad-services.html#details" class="alast">Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dsec2">
+                        <div class="secserv">
+                            <b><i class="bi bi-calendar2-event-fill"></i>&nbsp;&nbsp;Services</b>
+                            <div class="servcon" id="servcon">
+                                <div class="noconcard">
+                                    <i class="nocon bi bi-ban"></i>
+                                    <i class="nocon">No contents.</i>
+                                </div>
+                                <!-- <div class="dashserv">
+                                    <img src="../../resources/bstudyblueblack.jpg" alt="">
+                                    <ul>
+                                        <li><b>Title</b><span>Bible Study</span></li>
+                                        <li><b>Date</b><span>Thurs. 23th October 2025</span></li>
+                                    </ul>
+                                    <a href="ad-services.html#details">Details</a>
+                                </div> -->
+                            </div>
+                            <a href="#" class="alast last-a links" title="ad-services">View More</a>
+                        </div>
+
+                        <div class="secprof">
+                            <b><i class="bi bi-cake2-fill"></i>&nbsp;&nbsp;Birthdays</b>
+                            <div class="memcon" id="memcon">
+                                <div class="noconcard">
+                                    <i class="nocon bi bi-ban"></i>
+                                    <i class="nocon">No contents.</i>
+                                </div>
+                                <!-- <div class="profilecard pc1">
+                                    <img src="" alt=".">
+                                    <p class="imgfallback"><span>M</span></p>
+                                    <i class="badge bi bi-star-fill member"></i>
+                                    <div>
+                                        <p class="first">
+                                            <b>Member</b>
+                                            <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                        </p>
+                                        <a href="#">View</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <a href="#" class="alast last-a links" title="ad-members">View all Members</a>
+                        </div>
+                    </div>
+
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/admindash.js"></script>
+</body>
+</html>

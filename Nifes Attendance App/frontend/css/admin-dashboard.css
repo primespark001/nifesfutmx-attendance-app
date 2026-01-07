@@ -1,0 +1,120 @@
+
+.dsec1{
+    width: 100%;
+    margin-top: 1em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+    min-width: 15em;
+}
+.dsec1 .sectop{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: .7em 1em;
+    border-bottom: 1px solid var(--textcolor);
+}
+.sectop a{
+    padding: .4em .7em;
+    border-radius: .7em;
+    font-size: .9em;
+    color: var(--textcolor);
+    border: 1px solid var(--bordercolor);
+}
+.sectop a:hover{
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+
+.secbottom{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.dsec2{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    gap: 2em;
+}
+.secserv, .secprof{
+    flex: 1 0 47%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+    overflow: hidden;
+}
+.servcon, .memcon{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    overflow: hidden;
+    overflow-x: auto;
+    height: 100%;
+}
+.dashserv{
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    gap: .5em;;
+    border-radius: 1.5em;
+    border: 1px solid var(--transborder);
+    background: var(--shade);
+}
+.dashserv img{ 
+    max-height: 10em;
+    border-radius: 1em;
+}
+.dashserv ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    font-size: .8em;
+}
+.dashserv ul li{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    padding: .5em;
+    border-radius: 1em;
+    font-size: .8em;
+    background: var(--lightshade);
+}
+.dashserv ul li b{
+    width: fit-content;
+    padding: .2em .7em;
+    color: #fff;
+    background: var(--nifesgrad);
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 500;
+}
+.dashserv a{
+    margin-top: auto;
+    font-size: .7em;
+    padding: .2em .5em;
+    width: 100%;
+    text-align: center;
+    border-radius: 10000px;
+    border: 1px solid var(--transborder);
+    color: var(--textcolor);
+}
+.dashserv a:hover{
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+.dsec2 .alast{
+    flex: 0 0 0%;
+    height: fit-content;
+}

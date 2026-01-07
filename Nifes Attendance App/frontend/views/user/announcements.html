@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/usergeneral.css">
+    <link rel="stylesheet" href="../../css/user-announcements.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="#" class="links" title="dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="links" title="attendance"><i class="bi bi-bar-chart-line-fill"></i><span>Attendance</span></a>
+            <a href="#" class="links activenav" title="announcements"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="#" class="links" title="members"><i class="bi bi-people-fill"></i><span>Members</span></a>
+            <a href="#" class="links" title="profile"><i class="bi bi-person-fill"></i><span>Profile</span></a>
+            <hr>
+            <section class="theme">
+                <input type="radio" name="theme" id="system-theme" checked onclick="userTheme('system')">
+                <input type="radio" name="theme" id="light-theme" onclick="userTheme('light')">
+                <input type="radio" name="theme" id="dark-theme" onclick="userTheme('dark')">
+                <label for="system-theme">
+                    <i class="bi bi-laptop"></i>
+                    <p>System</p>
+                </label>
+                <label for="light-theme">
+                    <i class="bi bi-sun"></i>
+                    <p>Light</p>
+                </label>
+                <label for="dark-theme">
+                    <i class="bi bi-moon"></i>
+                    <p>Dark</p>
+                </label>
+            </section>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Announcements</h3>
+            <label for="topp" class="topp">
+                <aside class="img">
+                    <img src="" alt="." class="userimage">
+                    <p class="imgfallback userinit">M</p>
+                </aside>
+                <p class="tppname username">Member</p>
+            </label>
+            <input type="checkbox" name="topp" id="topp">
+            <label for="topp" class="toppcov"></label>
+            <div class="topprofile">
+                <div class="part">
+                    <i class="badge bi bi-star-fill member" id="userbadge"></i>
+                    <aside class="img">
+                        <img src="" alt="." class="userimage">
+                        <p class="imgfallback userinit">M</p>
+                    </aside>
+                    <p class="tpp username">Member</p>
+                </div>
+                <div class="div">
+                    <p>DETAILS</p>
+                    <ul>
+                        <li id="userid"></li>
+                        <li><span>Name</span><span id="userfullname">Member</span></li>
+                        <li><span>Email</span><span id="useremail">example@gmail.com</span></li>
+                        <li><span>Family</span><span id="userfamily">Member family</span></li>
+                        <li><span>Unit</span><span id="userunit">Member unit</span></li>
+                    </ul>
+                </div>
+                <div class="div">
+                    <p>ACTIONS</p>
+                    <ul>
+                        <li><a href="#" class="links" title="profile#badge"><i class="bi bi-star-fill"></i>View Badge</a></li>
+                        <li><a href="#" class="links" title="profile#profile"><i class="fas fa-user"></i>View Profile</a></li>
+                        <li><a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <!-- Announcement -->
+            <div class="content" id="announcements">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> >
+                    <a href="#announcements">Announcements</a>
+                </div>
+                <div class="main">
+                    <h4>Announcements</h4>
+                    <div class="biblepassage">
+                        <p>'And the LORD answered me, and said, Write the vision, and make it plain upon tables, that he may run that readeth it.' <br/><i>-Habakkuk 2:2 (KJV)</i></p>
+                        <p>'How beautiful on the mountains are the feet of those who bring good news, who proclaim peace, who bring good tidings.' <br/><i>-Isaiah 52:7 (NIV)</i></p>
+                        <p>'And he said unto them, Go ye into all the world, and preach the gospel to every creature.' <br/><i>-Mark 16:15 (KJV)</i></p>
+                    </div>
+                    
+                    <div class="overview">                     
+                        <a href="#" class="mybadge member links" title="profile#badge" id="overviewbadge">
+                            <i>Badge</i>
+                            <h3 id="overviewbadgeclass" class="bi bi-star-fill"></h3>
+                        </a>
+                        <div>
+                            <i>Announcements</i>
+                            <h3><b class="bi bi-megaphone-fill"></b>&nbsp;&nbsp;<span id="overviewannounce">0</span></h3>
+                        </div>                                            
+                    </div>
+
+                    <div class="announcements">
+                        <!-- Section One 1 -->
+                        <input type="checkbox" name="search" id="search">
+                        <div class="sec" id="announce">
+                            <div class="topnav">
+                                <b>Details</b>                                
+                                <label for="search" title="Search" class="bi bi-search"></label>
+                            </div>
+                            <section>
+                                <!-- All -->                                
+                                <div class="all">
+                                    <p class="total">Total: <span id="announcenum">0</span></p>
+                                    <div class="announcecon" id="announcecon">
+                                        <div class="noconcard">
+                                            <i class="nocon bi bi-ban"></i>
+                                            <i class="nocon">No contents.</i>
+                                        </div>
+                                        <!-- <div class="card">
+                                            <a href="" title="Annoucement"><img src="" alt="."></a>                                    
+                                            <div class="text">
+                                                <p>
+                                                    <b>Book of The Month</b>
+                                                    <span>1 Peter - Stand Firm</span>
+                                                </p>
+                                                <a href="#details">Details</a>
+                                            </div>
+                                        </div> -->                                        
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Section two 2 Search by Name -->
+                        <div class="sec sec2" id="searchcon">
+                            <div class="topnav">
+                                <label for="search" title="Back" class="bi bi-caret-left-fill"></label>
+                                <div>
+                                    <input type="search" name="dsearch" id="dsearch" title="Search" placeholder="Search announcements...">
+                                    <button type="button" title="Search" class="bi bi-search" onclick="searchAnnounce()"></button>
+                                </div>
+                            </div>
+                            <section>
+                                <p class="total">Result: <span id="searchnum">0</span></p>
+                                <div class="announcecon searchtablecontainer" id="searchResultCon">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-ban"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="card">
+                                        <a href="" title="Annoucement"><img src="" alt="."></a>                                    
+                                        <div class="text">
+                                            <p>
+                                                <b>Book of The Month</b>
+                                                <span>1 Peter - Stand Firm</span>
+                                            </p>
+                                            <a href="#details">Details</a>
+                                        </div>
+                                    </div>  -->
+                                </div>
+                            </section>
+                        </div>
+                    </div>                    
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+                </div>
+            </div>
+
+            <div class="content" id="details">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> >
+                    <a href="#announcements">Announcements</a> >
+                    <a href="#details" class="announcetitle">Book of the month</a>
+                </div>
+                <div class="main">
+                    <h4><a href="#announcements" title="back" class="back fas fa-caret-left"></a> <span class="announcetitle">Details</span></h4>
+
+                    <div class="dinfo" id="dinfo">
+                        <a href="" title="Annoucement"><img src="" alt="."></a>                                    
+                        <div class="text">
+                            <b>Book of The Month</b>
+                            <p>1 Peter - Stand Firm</p>
+                        </div>
+                        <div class="description">
+                            <b>Description</b>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat vitae est numquam, ullam adipisci officiis mollitia magni voluptas error ab cupiditate sint quod dolores deserunt? Pariatur facilis voluptatem labore aperiam.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+        
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+
+    <script src="../../js/user.js"></script>
+    <script src="../../js/uannouncements.js"></script>
+</body>
+</html>

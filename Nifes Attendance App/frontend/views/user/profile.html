@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/usergeneral.css">
+    <link rel="stylesheet" href="../../css/user-profile.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="#" class="links" title="dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="links" title="attendance"><i class="bi bi-bar-chart-line-fill"></i><span>Attendance</span></a>
+            <a href="#" class="links" title="announcements"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="#" class="links" title="members"><i class="bi bi-people-fill"></i><span>Members</span></a>
+            <a href="#" class="links activenav" title="profile"><i class="bi bi-person-fill"></i><span>Profile</span></a>
+            <hr>
+            <section class="theme">
+                <input type="radio" name="theme" id="system-theme" checked onclick="userTheme('system')">
+                <input type="radio" name="theme" id="light-theme" onclick="userTheme('light')">
+                <input type="radio" name="theme" id="dark-theme" onclick="userTheme('dark')">
+                <label for="system-theme">
+                    <i class="bi bi-laptop"></i>
+                    <p>System</p>
+                </label>
+                <label for="light-theme">
+                    <i class="bi bi-sun"></i>
+                    <p>Light</p>
+                </label>
+                <label for="dark-theme">
+                    <i class="bi bi-moon"></i>
+                    <p>Dark</p>
+                </label>
+            </section>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Profile</h3>
+            <label for="topp" class="topp">
+                <aside class="img">
+                    <img src="" alt="." class="userimage">
+                    <p class="imgfallback userinit">M</p>
+                </aside>
+                <p class="tppname username">Member</p>
+            </label>
+            <input type="checkbox" name="topp" id="topp">
+            <label for="topp" class="toppcov"></label>
+            <div class="topprofile">
+                <div class="part">
+                    <i class="badge bi bi-star-fill member" id="userbadge"></i>
+                    <aside class="img">
+                        <img src="" alt="." class="userimage">
+                        <p class="imgfallback userinit">M</p>
+                    </aside>
+                    <p class="tpp username">Member</p>
+                </div>
+                <div class="div">
+                    <p>DETAILS</p>
+                    <ul>
+                        <li id="userid"></li>
+                        <li><span>Name</span><span id="userfullname">Member</span></li>
+                        <li><span>Email</span><span id="useremail">example@gmail.com</span></li>
+                        <li><span>Family</span><span id="userfamily">Member family</span></li>
+                        <li><span>Unit</span><span id="userunit">Member unit</span></li>
+                    </ul>
+                </div>
+                <div class="div">
+                    <p>ACTIONS</p>
+                    <ul>
+                        <li><a href="#badge"><i class="bi bi-star-fill"></i>View Badge</a></li>
+                        <li><a href="#profile"><i class="fas fa-user"></i>View Profile</a></li>
+                        <li><a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <!-- Profile -->
+            <div class="content" id="profile">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> > 
+                    <a href="#profile">Profile</a>
+                </div>
+                <div class="main">
+                    <div>
+                        <h4>My Profile</h4>
+                        <div class="biblepassage">
+                            <p>'Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee.' <br/><i>-Jeremiah 1:5 (KJV)</i></p>
+                            <p>'For we are God's handiwork, created in Christ Jesus to do good works.' <br/><i>-Ephesians 2:10 (NIV)</i></p>
+                            <p>'But you are a chosen people, a royal priesthood, a holy nation, God's special possession…' <br/><i>-1 Peter 2:9 (NIV)</i></p>
+                        </div>
+
+                        <div class="overview">                     
+                            <a href="#badge" class="mybadge member" id="overviewbadge">
+                                <i>Badge</i>
+                                <h3 id="overviewbadgeclass" class="bi bi-star-fill"></h3>
+                            </a>
+                            <div>
+                                <i>Consistency</i>
+                                <h3><b class="fas fa-sync"></b>&nbsp;&nbsp;<span id="overviewconsist">0%</span></h3>
+                            </div>                                            
+                        </div>
+                        
+                        <div class="mainwidth1">
+                            <div class="d1">
+                                <div class="profilecon">
+                                    <div class="coverimg">
+                                        <aside class="img" id="psecimg">
+                                            <a href="#" title="Profile">
+                                                <img src="" alt=".">
+                                                <p class="imgfallback">M</p>
+                                            </a>
+                                        </aside>
+                                    </div>
+                                    <div class="pp" id="psecpp">
+                                        <b>Member</b><br>
+                                        <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                    </div>
+                                </div>
+                                <div class="profiledet">
+                                    <ul>
+                                        <li>Personal</li>                                    
+                                        <li>
+                                            <b>Full Name</b>
+                                            <span id="psecfullname">Member</span>
+                                        </li>
+                                        <li>
+                                            <b>Email</b>
+                                            <span id="psecemail">example@gmail.com</span>
+                                        </li>
+                                        <li>
+                                            <b>Phone</b>
+                                            <span id="psecphone">081234567890</span>
+                                        </li>
+                                        <li>
+                                            <b>D.O.B</b>
+                                            <span id="psecdob">Day Month</span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>Nifes</li>
+                                        <li>
+                                            <b>Family</b>
+                                            <span id="psecfamily">Member Family</span>
+                                        </li>
+                                        <li>
+                                            <b>Unit</b>
+                                            <span id="psecunit">Member Unit</span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>School</li>
+                                        <li>
+                                            <b>Dept.</b>
+                                            <span id="psecdept">Department</span>
+                                        </li>
+                                        <li>
+                                            <b>Faculty</b>
+                                            <span id="psecfaculty">Faculty</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="dtabs">
+                                <div class="tabs">
+                                    <b><i class="bi bi-tools"></i>&nbsp;&nbsp;&nbsp;Actions</b>
+                                    <div class="profile-btns">
+                                        <a href="#badge"><i class="bi bi-star-fill"></i>&nbsp;&nbsp;Badge Info</a>
+                                        <a href="#edit-profile"><i class="fas fa-user-pen"></i>&nbsp;&nbsp;Edit Profile</a>
+                                        <a href="#change-password"><i class="bi bi-shield-lock-fill"></i>&nbsp;&nbsp;Change Password</a>
+                                        <a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>&nbsp;&nbsp;Log out</a>
+                                        <label for="delacct"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Account</label>
+                                    </div>
+                                </div>
+                                <div class="tabs">
+                                    <b><i class="bi bi-person-square"></i>&nbsp;&nbsp;&nbsp;Profile Card</b>
+                                    <div id="psecprof">
+                                        <div class="profilecard pc1">
+                                            <img src="" alt=".">
+                                            <p class="imgfallback"><span>M</span></p>
+                                            <i class="badge bi bi-star-fill member"></i>
+                                            <div>
+                                                <p class="first">
+                                                    <b>Member</b>
+                                                    <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                                </p>
+                                                <a href="#"><label for="profiledisplay">View</label></a>
+                                            </div>
+                                        </div>                                                                        
+                                    </div>
+                                </div>
+                                <div class="tabs help">
+                                    <b><i class="bi bi-info-circle"></i>&nbsp;&nbsp;&nbsp;Need Help?</b>
+                                    <h4>Email us: <a href="#">nifes@gmail.com</a></h4>
+                                    <h4>Chat us: <a href="#">Nifes Futmx</a></h4>
+                                    <h4>Call us:  +234(0) 812 345 6789</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                            Building tomorrow's leaders today...
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="checkbox" name="delacct" id="delacct">
+                <div class="delcov"></div>
+                <div class="delcon">
+                    <i class="fas fa-warning"></i>
+                    <h3>Delete Account</h3>
+                    <p>
+                        All information about you will be deleted.
+                        Including your badge and consistency.<br>
+                        <b>THIS CANNOT BE UNDONE!!!</b>
+                    </p>
+                    <div>
+                        <a href="#" onclick="deleteAcct()">Delete</a>
+                        <label for="delacct">Cancel</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Profile -->
+            <div class="content" id="edit-profile">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> > 
+                    <a href="#profile">Profile</a> >
+                    <a href="#edit-profile">Edit profile</a>
+                </div>
+                <div class="main">
+                    <div>
+                        <h4><a href="#profile" title="back" class="back fas fa-caret-left"></a> Edit Profile</h4>
+                        <div class="mainwidth2">
+                            <form class="form">
+                                <a href="#change-password" class="chpswd"><i class="bi bi-shield-lock-fill"></i>&nbsp;&nbsp;Change Password</a>
+                                <div class="image">
+                                    <b>PROFILE PICTURE</b>
+                                    <aside class="img">
+                                        <img src="" alt="." id="edsecimg">
+                                        <p class="imgfallback" id="edsecinit">M</p>
+                                    </aside>
+                                    <input type="file" name="editimg" id="editimg" accept="image/*" title="profile">
+                                    <label for="editimg"><i class="bi bi-camera"></i></label>
+                                </div>
+                                <div class="editdet">
+                                    <b>PERSONAL</b>
+                                    <div>
+                                        <label for="email">Email <span>Permanent</span></label>
+                                        <input type="email" name="email" id="email" readonly disabled>
+                                    </div>
+                                    <div>
+                                        <label for="surname">Surname</label>
+                                        <input type="text" name="surname" id="surname">
+                                    </div>
+                                    <div>
+                                        <label for="firstname">First Name</label>
+                                        <input type="text" name="firstname" id="firstname">
+                                    </div>
+                                    <div>
+                                        <label for="othername">Other Name <span>Optional</span></label>
+                                        <input type="text" name="othername" id="othername">
+                                    </div>
+                                    <div>
+                                        <label for="phone">Phone No.</label>
+                                        <input type="number" name="phone" id="phone">
+                                    </div>
+                                    <div>
+                                        <label for="dob">Date of Birth</label>
+                                        <input type="date" name="dob" id="dob">
+                                    </div>
+                                    <b>NIFES</b>
+                                    <div>
+                                        <label for="family">Family <span>Permanent</span></label>
+                                        <select name="family" id="family" readonly disabled>
+                                            <option value="">Member Family</option>
+                                            <option value="Dominion">Dominion Family</option>
+                                            <option value="Beacon">Beacon Family</option>
+                                            <option value="Glory">Glory Family</option>
+                                            <option value="Rehoboth">Rehoboth Family</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="unit">Unit <span>Permanent</span></label>
+                                        <select name="unit" id="unit" readonly disabled>
+                                            <option value="">Member Unit</option>
+                                            <option value="Evangelism">Evangelism Unit</option>
+                                            <option value="Bible Study">Bible Study Unit</option>
+                                            <option value="Prayer">Prayer Unit</option>
+                                            <option value="TLH (Choir)">The Lord's Habitation (Choir Unit)</option>
+                                            <option value="Press">Kabod Media (Press Unit)</option>
+                                            <option value="Drama">The Potter's Vessel (Drama Unit)</option>
+                                            <option value="Technical">Technical Unit</option>
+                                            <option value="Ushering">Ushering Unit</option>
+                                            <option value="None">None</option>
+                                        </select>                                     
+                                    </div>
+                                    <b>SCHOOL</b>
+                                    <div>
+                                        <label for="faculty">Faculty</label>
+                                        <select name="faculty" id="faculty">
+                                            <option value="SEET">SEET</option>
+                                            <option value="SIPET">SIPET</option>
+                                            <option value="SET">SET</option>
+                                            <option value="SICT">SICT</option>
+                                            <option value="SAAT">SAAT</option>
+                                            <option value="SPS">SPS</option>
+                                            <option value="SLS">SLS</option>
+                                            <option value="SIT">SIT</option>
+                                            <option value="SSTE">SSTE</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="dept">Department</label>
+                                        <input type="text" name="dept" id="dept">
+                                    </div>                                
+                                </div>
+                                <section class="edbtns">
+                                    <a href="#profile"><i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+                                    <button type="button" onclick="profileEditSave()"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
+                                </section>
+                            </form>
+                        </div>                  
+                        <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                            Building tomorrow's leaders today...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password -->
+            <div class="content" id="change-password">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> > 
+                    <a href="#profile">Profile</a> >
+                    <a href="#edit-profile">Edit profile</a> >
+                    <a href="#change-password">Change Password</a>
+                </div>
+                <div class="main">
+                    <div>
+                        <h4><a href="#edit-profile" title="back" class="back fas fa-caret-left"></a> Change Password</h4>
+                        <div class="mainwidth2">
+                            <form action="" method="post" class="form">                                
+                                <div class="editdet">
+                                    <b>CHANGE PASSWORD</b>
+                                    <div>
+                                        <label for="oldpswd">Old Password</label>
+                                        <input type="password" name="oldpswd" id="oldpswd" placeholder="e.g. *_*" minlength="8" required>
+                                    </div>                               
+                                    <div>
+                                        <label for="newpswd">New Password</label>
+                                        <input type="password" name="newpswd" id="newpswd" placeholder="e.g. *_*" minlength="8" required>
+                                    </div>                               
+                                </div>
+                                <section class="edbtns">
+                                    <button type="button" onclick="profileEditPassSave()"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
+                                </section>
+                            </form>
+                        </div>                  
+                        <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                            Building tomorrow's leaders today...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="content" id="badge">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> >
+                    <a href="#profile">Profile</a> >
+                    <a href="#badge">Badge</a>
+                </div>
+                <div class="main">
+                    <div>
+                        <h4><a href="#profile" title="back" class="back fas fa-caret-left"></a> My Status</h4>
+                        <div class="biblepassage">
+                            <p>'Know ye not that they which run in a race run all, but one receiveth the prize?... Now they do it to obtain a corruptible crown; but we an incorruptible.' <br/><i>-1 Corinthians 9:24-25 (KJV)</i></p>
+                            <p>'I have fought the good fight, I have finished the race, I have kept the faith. Now there is in store for me the crown of righteousness.' <br/><i>-2 Timothy 4:7-8 (NIV)</i></p>
+                            <p>'God is not unjust; he will not forget your work and the love you have shown him.' <br/><i>-Hebrews 6:10 (NIV)</i></p>
+                        </div>                    
+                        
+                        <div class="labels">
+                            <label for="memberbadge">Member</label>
+                            <label for="acmemberbadge">Ac-Member</label>
+                            <label for="stewardbadge">Steward</label>
+                            <label for="acstewardbadge">Ac-Steward</label>
+                            <label for="devoteebadge">Devotee</label>
+                        </div>
+
+                        <div class="mainwidth1"></div>
+                            <div class="firstsection">                                
+                                <div class="sections">
+                                    <b>My Badge</b>
+                                    <input type="radio" name="mybadge" id="memberbadge" placeholder="." checked>
+                                    <input type="radio" name="mybadge" id="acmemberbadge" placeholder=".">
+                                    <input type="radio" name="mybadge" id="stewardbadge" placeholder=".">
+                                    <input type="radio" name="mybadge" id="acstewardbadge" placeholder=".">
+                                    <input type="radio" name="mybadge" id="devoteebadge" placeholder=".">
+                                    
+                                    <div class="firstsec">
+                                        <div class="thisbadge" id="member">
+                                            <div class="bigbadge member">
+                                                <i class="bi bi-star-fill"></i>
+                                                <p>MEMBER</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>MEMBER</p></div>
+                                                <div><b>Rating</b><p>1 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A member of the fellowship</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a member of the NIFES.</li>
+                                                    <li>Must have an account with this Attendance site.</li>
+                                                    <li>Must have attended at least 1 service.</li>
+                                                </ul>
+                                            </div>
+                                        </div>                                       
+                                        <div class="thisbadge" id="acmember">
+                                            <div class="bigbadge acmember">
+                                                <i class="bi bi-award-fill"></i>
+                                                <p>AC-MEMBER</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>ACTIVE MEMBER</p></div>
+                                                <div><b>Rating</b><p>2 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A consistent member of the fellowship</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a member of the NIFES.</li>
+                                                    <li>Must have attended 6 or more services.</li>
+                                                    <li>Must have Consistency greater than 49.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                        <div class="thisbadge" id="steward">
+                                            <div class="bigbadge steward">
+                                                <i class="fas fa-award"></i>
+                                                <p>STEWARD</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>STEWARD</p></div>
+                                                <div><b>Rating</b><p>3 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A regular steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a steward/worker in a unit.</li>
+                                                    <li>Must have attended 9 or more services.</li>
+                                                    <li>Must have Consistency greater than 49.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                        <div class="thisbadge" id="acsteward">
+                                            <div class="bigbadge acsteward">
+                                                <i class="fas fa-medal"></i>
+                                                <p>AC-STEWARD</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>ACTIVE STEWARD</p></div>
+                                                <div><b>Rating</b><p>4 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A consistent steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a steward/worker in a unit.</li>
+                                                    <li>Must have attended 15 or more services.</li>
+                                                    <li>Must have Consistency greater than 74.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="thisbadge" id="devotee">
+                                            <div class="bigbadge devotee">
+                                                <i class="bi bi-trophy-fill"></i>
+                                                <p>DEVOTEE</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>DEVOTEE</p></div>
+                                                <div><b>Rating</b><p>5 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A very consistent steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be an active steward/worker in a unit.</li>
+                                                    <li>Must have attended 18 or more services.</li>
+                                                    <li>Must have Consistency greater than 74.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                </div>
+
+                                <div class="sections">
+                                    <div class="allbadge">All Badges</div>
+                                    <div class="preview">
+                                        <div class="bigbadge member">
+                                            <i class="bi bi-star-fill"></i>
+                                            <p>MEMBER</p>
+                                        </div>
+                                        <div class="bigbadge acmember">
+                                            <i class="bi bi-award-fill"></i>
+                                            <p>AC-MEMBER</p>
+                                        </div>
+                                        <div class="bigbadge steward">
+                                            <i class="fas fa-award"></i>
+                                            <p>STEWARD</p>
+                                        </div>
+                                        <div class="bigbadge acsteward">
+                                            <i class="fas fa-medal"></i>
+                                            <p>AC-STEWARD</p>
+                                        </div>
+                                        <div class="bigbadge devotee">
+                                            <i class="bi bi-trophy-fill"></i>
+                                            <p>DEVOTEE</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sections">
+                                    <b>Badges <code>SWIPE >></code></b>
+                                    <div class="badgecon">
+                                        <div class="thisbadge">
+                                            <div class="bigbadge member">
+                                                <i class="bi bi-star-fill"></i>
+                                                <p>MEMBER</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>MEMBER</p></div>
+                                                <div><b>Rating</b><p>1 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A member of the fellowship</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a member of the NIFES.</li>
+                                                    <li>Must have an account with this Attendance site.</li>
+                                                    <li>Must have attended at least 1 service.</li>
+                                                </ul>
+                                            </div>
+                                        </div>                                       
+                                        <div class="thisbadge">
+                                            <div class="bigbadge acmember">
+                                                <i class="bi bi-award-fill"></i>
+                                                <p>AC-MEMBER</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>ACTIVE MEMBER</p></div>
+                                                <div><b>Rating</b><p>2 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A consistent member of the fellowship</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a member of the NIFES.</li>
+                                                    <li>Must have attended 9 or more services.</li>
+                                                    <li>Must have Consistency greater than 49.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                        <div class="thisbadge">
+                                            <div class="bigbadge steward">
+                                                <i class="fas fa-award"></i>
+                                                <p>STEWARD</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>STEWARD</p></div>
+                                                <div><b>Rating</b><p>3 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A regular steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a steward/worker in a unit.</li>
+                                                    <li>Must have attended 12 or more services.</li>
+                                                    <li>Must have Consistency greater than 49.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>  
+                                        <div class="thisbadge">
+                                            <div class="bigbadge acsteward">
+                                                <i class="fas fa-medal"></i>
+                                                <p>AC-STEWARD</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>ACTIVE STEWARD</p></div>
+                                                <div><b>Rating</b><p>4 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A consistent steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be a steward/worker in a unit.</li>
+                                                    <li>Must have attended 18 or more services.</li>
+                                                    <li>Must have Consistency greater than 74.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="thisbadge">
+                                            <div class="bigbadge devotee">
+                                                <i class="bi bi-trophy-fill"></i>
+                                                <p>DEVOTEE</p>
+                                            </div>
+                                            <div class="badgeinfo thisdiv">
+                                                <div><b>Title</b><p>DEVOTEE</p></div>
+                                                <div><b>Rating</b><p>5 <i class="bi bi-star-fill"></i></p></div>
+                                            </div>
+                                            <div class="desc thisdiv">
+                                                <b>Description</b>
+                                                <p>A very consistent steward/worker in a unit</p>
+                                            </div>
+                                            <div class="require thisdiv">
+                                                <b>Requirements</b>
+                                                <ul>
+                                                    <li>Must be an active steward/worker in a unit.</li>
+                                                    <li>Must have attended 24 or more services.</li>
+                                                    <li>Must have Consistency greater than 74.9%.</li>
+                                                </ul>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                            Building tomorrow's leaders today...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" name="profiledisplay" id="profiledisplay">
+            <label for="profiledisplay" class="usercon"></label>
+            <div class="userdetails">
+                <i class="badge bi bi-star-fill member"></i>
+                <aside class="img">
+                    <img src="" alt=".">
+                    <p class="imgfallback">M</p>
+                </aside>
+                <div class="dscroller">
+                    <div class="occupy"><i class="bi bi-caret-up-fill"></i></div>
+                    <ul>
+                        <li><b>Consistency</b> 
+                            <h1><i class="fas fa-sync"></i> <span>0%</span></h1>
+                        </li>
+                        <li><b>Name</b>  <span>Member</span></li>
+                        <li><b>Phone</b>  <span>08123456789</span></li>
+                        <li><b>D.O.B</b> <span>1st January</span></li>
+                        <li><b>Family</b> <span>Member family</span></li>
+                        <li><b>Unit</b> <span>Member unit</span></li>
+                        <li><b>Dept.</b> <span>Department</span></li>
+                    </ul>                
+                </div>
+            </div> 
+        </section>
+
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+
+    <script src="../../js/user.js"></script>
+    <script src="../../js/uprofile.js"></script>
+</body>
+</html>

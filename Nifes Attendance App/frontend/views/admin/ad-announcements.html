@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Don't forget to remove this link -->
+    <link rel="stylesheet" href="../../../../web-icons/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../../../../web-icons/bootstrap-5.3.7-dist/icons-1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../css/admingeneral.css">
+    <link rel="stylesheet" href="../../css/admin-announcements.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="ad-dashboard.html"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="ad-services.html"><i class="bi bi-bar-chart-line-fill"></i><span>Services</span></a>
+            <a href="ad-announcements.html" class="activenav"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="ad-members.html"><i class="bi bi-people-fill"></i><span>Members</span></a>            
+            <div class="quickactions">
+                <a href="#logout"><i class="fas fa-sign-out"></i>Log out</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Announcements</h3>
+        </div>
+        <section class="section">
+            <!-- Dashboard -->
+            <div class="content" id="announcements">
+                <div class="breadcrumb">
+                    <a href="ad-dashboard.html">Dashboard</a> >
+                    <a href="#announcements">Announcements</a>
+                </div>
+                <div class="main">
+                    <h4>Announcements</h4>
+                    <div class="overview">                     
+                        <div>
+                            <b>Announcements</b>
+                            <h2>
+                                <i class="bi bi-megaphone-fill"></i>
+                                <p>10</p>
+                            </h2>
+                        </div>                                                                
+                    </div>
+
+                    
+                    <a href="#create" class="first-a">
+                        <i class="fas fa-plus"></i>
+                        <p>Create Service</p>
+                    </a>  
+                    
+
+                    <div class="announcements">
+                        <!-- Section One 1 -->
+                        <input type="checkbox" name="search" id="search">
+                        <div class="sec" id="announcecon">
+                            <div class="topnav">
+                                <b>Announcements</b>                                
+                                <label for="search" title="Search" class="bi bi-search"></label>
+                            </div>
+                            <section>
+                                <p class="total">Total: 0</p>
+                                <ul class="tableheader">
+                                    <li>Title</li>
+                                    <li>Date Created</li>
+                                    <li>Time Created</li>
+                                    <li>Duration</li>
+                                    <li>Actions</li>
+                                </ul>
+                                <div class="tablecontainer">
+                                    <!-- <div class="noconcard">
+                                        <i class="nocon bi bi-bell-slash-fill"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div> -->
+                                    <div class="tabledata">
+                                        <div>
+                                            <img src="../../resources/bookofmonth.jpg" alt=".">
+                                            <p>Book of the Month</p>
+                                        </div>
+                                        <b>29/10/2025</b>
+                                        <b>10:00am</b>
+                                        <b>2 weeks</b>
+                                        <ul>
+                                            <li><label for="announcedet" class="fas fa-eye" title="Edit"></label></li>
+                                            <li><label for="editannounce" class="fas fa-pen" title="Edit"></label></li>
+                                            <li><label for="delannounce" class="fas fa-trash" title="Delete"></label></li>
+                                        </ul>
+                                    </div>                                       
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Section two 2 Search by Name -->
+                        <div class="sec sec2" id="searchcon">
+                            <div class="topnav">
+                                <label for="search" title="Back" class="bi bi-caret-left-fill"></label>
+                                <div>
+                                    <input type="search" name="dsearch" id="dsearch" title="Search" placeholder="Search by title...">
+                                    <button type="button" title="Search" class="bi bi-search"></button>
+                                </div>
+                            </div>
+                            <section>
+                                <p class="total">Result: 0</p>        
+                                <ul class="tableheader">
+                                    <li>Title</li>
+                                    <li>Date Created</li>
+                                    <li>Time Created</li>
+                                    <li>Duration</li>
+                                    <li>Actions</li>
+                                </ul>
+                                <div class="tablecontainer">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-bell-slash-fill"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="tabledata">
+                                        <div>
+                                            <img src="../../resources/bookofmonth.jpg" alt=".">
+                                            <p>Book of the Month</p>
+                                        </div>
+                                        <b>29/10/2025</b>
+                                        <b>10:00am</b>
+                                        <b>2 weeks</b>
+                                        <ul>
+                                            <li><label for="announcedet" class="fas fa-eye" title="Edit"></label></li>
+                                            <li><label for="editannounce" class="fas fa-pen" title="Edit"></label></li>
+                                            <li><a href="#" class="fas fa-trash" title="Delete"></a></li>
+                                        </ul>
+                                    </div>   -->                                    
+                                </div>
+                            </section>
+                        </div>
+                    </div>     
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Create -->
+            <div class="content" id="create">
+                <div class="breadcrumb">
+                    <a href="ad-dashboard.html">Dashboard</a> >
+                    <a href="#announcements">Announcements</a> >
+                    <a href="#create">Create</a>
+                </div>
+                <div class="main">
+                    <h4><a href="#announcements" title="back" class="back fas fa-caret-left"></a> Create Announcement</h4>
+                    
+                    
+                    <form action="" method="post">
+                        <div class="dimg">
+                            <img src="" alt="">
+                            <label for="editimg"><i class="bi bi-camera"></i><span>Add Image</span></label>
+                            <input type="file" name="editimg" id="editimg" accept="image/jpeg, image/png" title="profile" required>
+                        </div>
+                        <ul>
+                            <li>
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="title" placeholder="e.g. Celebration Service" required>
+                            </li>
+                            <li>
+                                <label for="info">Info</label>
+                                <input type="info" name="info" id="info" required>
+                            </li>
+                            <li>
+                                <label for="desc">Description</label>
+                                <textarea name="desc" id="desc"></textarea>
+                            </li>
+                        </ul>
+                        <div class="btns">
+                            <p>
+                                <label for="duration">Duration</label>
+                                <input type="number" name="duration" id="duration" min="1" max="60" value="1" required>
+                                <select name="" id="duration" required>
+                                    <option value="week">wk</option>
+                                    <option value="day">day</option>
+                                    <option value="hour">hr</option>
+                                    <option value="minute">m</option>
+                                    <option value="seconds">s</option>
+                                </select>
+                            </p>
+                            <button type="submit" class="regbtn"><i class="fas fa-plus"></i>&nbsp;&nbsp;Create</button>
+                        </div>
+                    </form>
+
+
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Announce Data Details -->
+            <input type="checkbox" name="announcedet" id="announcedet">
+            <label for="announcedet" class="dtabledatacover" title="close"></label>
+            <div class="dinfo">
+                <a href="#" title="Annoucement"><img src="../../resources/bookofmonth.jpg" alt="."></a>                                    
+                <div class="text">
+                    <b>Book of The Month</b>
+                    <p>1 Peter - Stand Firm</p>
+                </div>
+                <div class="description">
+                    <b>Description</b>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat vitae est numquam, ullam adipisci officiis mollitia magni voluptas error ab cupiditate sint quod dolores deserunt? Pariatur facilis voluptatem labore aperiam.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Edit announcements -->
+            <input type="checkbox" name="editannounce" id="editannounce">
+            <div class="editcov"></div>
+            <div class="editcon">
+                <h3><i class="fas fa-pen"></i><span>Edit Announcement</span>
+                    <label for="editannounce" class="fas fa-x"></label>
+                </h3>
+                <form action="" method="post">
+                    <div class="dimg">
+                        <img src="" alt="">
+                        <label for="editimg"><i class="bi bi-camera"></i><span>Add Image</span></label>
+                        <input type="file" name="editimg" id="editimg" accept="image/jpeg, image/png" title="profile" required>
+                    </div>
+                    <ul>
+                        <li>
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" placeholder="e.g. Celebration Service" required>
+                        </li>
+                        <li>
+                            <label for="info">Info</label>
+                            <input type="info" name="info" id="info" required>
+                        </li>
+                        <li>
+                            <label for="desc">Description</label>
+                            <textarea name="desc" id="desc"></textarea>
+                        </li>
+                    </ul>
+                    <div class="btns">
+                        <p>
+                            <label for="duration">Duration</label>
+                            <input type="number" name="duration" id="duration" min="1" max="60" value="1" required>
+                            <select name="" id="duration" required>
+                                <option value="week">wk</option>
+                                <option value="day">day</option>
+                                <option value="hour">hr</option>
+                                <option value="minute">m</option>
+                                <option value="seconds">s</option>
+                            </select>
+                        </p>
+                        <button type="submit" class="regbtn"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Delete Announcement -->
+            <input type="checkbox" name="delannounce" id="delannounce" class="delinput">
+            <div class="delcov"></div>
+            <div class="delcon">
+                <i class="bi bi-megaphone-fill"></i>
+                <h3>Delete Announcement</h3>
+                <p>
+                    All information about this announcement will be deleted.
+                    Including the timing statitics.<br>
+                    <b>THIS CANNOT BE UNDONE!!!</b>
+                </p>
+                <div>
+                    <a href="#">Delete</a>
+                    <label for="delannounce">Cancel</label>
+                </div>
+            </div>
+            
+            <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                Building tomorrow's leaders today...
+            </div>
+            
+        </section>
+
+
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+</body>
+</html>

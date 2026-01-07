@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+        </div>
+        <p> NIFES FUTMX </p>
+        <a href="/" title="Home"><i class="fas fa-home"></i></a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="div">        
+            <div class="top">
+                <h2>Register</h2>
+                <p>Please fill the form to get started.</p>
+            </div>
+            <form>
+                <div>
+                    <label for="surname">* Surname</label>
+                    <input type="text" name="surname" id="surname" placeholder="e.g. Doe" required>
+                </div>
+                <div>
+                    <label for="firstname">* First Name</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="e.g. John" required>
+                </div>
+                <div>
+                    <label for="othername">Other Name <span>Optional</span></label>
+                    <input type="text" name="othername" id="othername" placeholder="e.g. John">
+                </div>
+                <div>
+                    <label for="phone">* Phone No.</label>
+                    <input type="number" name="phone" id="phone" placeholder="e.g. 08123456789" required>
+                </div>
+                <div>
+                    <label for="dob">* Date of Birth</label>
+                    <input type="date" name="dob" id="dob" required>
+                </div>
+                <div>
+                    <label for="family">* Family</label>
+                    <select name="family" id="family" required>
+                        <option value=""><i>--Select family--</i></option>
+                        <option value="Dominion">Dominion Family</option>
+                        <option value="Beacon">Beacon Family</option>
+                        <option value="Glory">Glory Family</option>
+                        <option value="Rehoboth">Rehoboth Family</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="unit">* Unit</label>
+                    <select name="unit" id="unit" required>
+                        <option value=""><i>--Select unit--</i></option>
+                        <option value="Evangelism">Evangelism Unit</option>
+                        <option value="Bible Study">Bible Study Unit</option>
+                        <option value="Prayer">Prayer Unit</option>
+                        <option value="TLH (Choir)">The Lord's Habitation (Choir Unit)</option>
+                        <option value="Press">Kabod Media (Press Unit)</option>
+                        <option value="Drama">The Potter's Vessel (Drama Unit)</option>
+                        <option value="Technical">Technical Unit</option>
+                        <option value="Ushering">Ushering Unit</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="faculty">* Faculty</label>
+                    <select name="faculty" id="faculty" required>
+                        <option value=""><i>--Select faculty--</i></option>
+                        <option value="SEET">SEET</option>
+                        <option value="SIPET">SIPET</option>
+                        <option value="SET">SET</option>
+                        <option value="SICT">SICT</option>
+                        <option value="SAAT">SAAT</option>
+                        <option value="SPS">SPS</option>
+                        <option value="SLS">SLS</option>
+                        <option value="SIT">SIT</option>
+                        <option value="SSTE">SSTE</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="dept">* Department</label>
+                    <input type="text" name="dept" id="dept" placeholder="e.g. Electrical Engineering" required>
+                </div>               
+                <div>
+                    <label for="email">* Email</label>
+                    <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
+                </div>
+                <div>
+                    <label for="pswd">* Password</label>
+                    <input type="password" name="pswd" id="pswd" placeholder="e.g. *_*" minlength="8" required>
+                </div>
+                <input type="checkbox" name="agree" id="agree" required>
+                <section class="section">
+                    <label for="agree">
+                        <span class="fas fa-check"></span>
+                        <span class="agree">I agree to the <a href="/#privacy">Terms of Use</a> and <a href="/#privacy">Privacy Policy</a> 
+                            of NIFES FUTMX Attendance platform.
+                        </span>
+                    </label>
+                </section>
+                <div>
+                    <span class="cover"></span>
+                    <button type="button" class="regbtn" onclick="register()">Register</button>
+                    <p>Already have an account? <a href="/auth/login">Login.</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <p class="last">&copy; NIFES FUT Minna - All rights reserved.</p>
+            <p class="last">Building tomorrow's leaders today...</p>
+        </footer>
+    </main>
+
+
+    <div class="loading" id="loading">
+        <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+        <div class="rotor"></div>
+    </div>
+    <p class="mess" id="mess">
+        <i class="fas fa-circle-check"></i>
+        <span>Registration Successful</span>
+    </p>
+
+    <script src="../../js/auth.js"></script>    
+</body>
+</html>

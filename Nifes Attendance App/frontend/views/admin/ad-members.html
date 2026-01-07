@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Don't forget to remove this link -->
+    <link rel="stylesheet" href="../../../../web-icons/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../../../../web-icons/bootstrap-5.3.7-dist/icons-1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../css/admingeneral.css">
+    <link rel="stylesheet" href="../../css/admin-members.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="ad-dashboard.html"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="ad-services.html"><i class="bi bi-bar-chart-line-fill"></i><span>Services</span></a>
+            <a href="ad-announcements.html"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="ad-members.html" class="activenav"><i class="bi bi-people-fill"></i><span>Members</span></a>            
+            <div class="quickactions">
+                <a href="#logout"><i class="fas fa-sign-out"></i>Log out</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Members</h3>
+        </div>
+        <section class="section">
+            <!-- Members -->
+            <div class="content" id="members">
+                <div class="breadcrumb">
+                    <a href="ad-dashboard.html">Dashboard</a> >
+                    <a href="ad-members.html#members">Members</a>
+                </div>
+                <div class="main">
+                    <div class="overview">                     
+                        <div>
+                            <b>Members</b>
+                            <h2>
+                                <i class="fas fa-users"></i>
+                                <p>250</p>
+                            </h2>
+                        </div>                                                             
+                    </div>
+
+                    <div class="dsec1">
+                        <b>Members</b>
+                        <div class="dtop">
+                            <div class="dsearchcontainer">
+                                <input type="search" name="searchbar" id="searchbar" placeholder="Search members...">
+                                <button type="button" class="fas fa-search" title="search"></button>
+                            </div>
+                            <div class="dfilters">
+                                <i class="fas fa-filter"> :</i>
+                                <select name="family" id="family" title="family">
+                                    <option value="">Family (all)</option>
+                                    <option value="dominion">Dominion</option>
+                                    <option value="beacon">Beacon</option>
+                                    <option value="glory">Glory</option>
+                                    <option value="rehoboth">Rehoboth</option>
+                                </select>
+                                <select name="unit" id="unit" title="unit">
+                                    <option value="">Unit (all)</option>
+                                    <option value="evangelism">Evangelism Unit</option>
+                                    <option value="bible-study">Bible Study Unit</option>
+                                    <option value="prayer">Prayer Unit</option>
+                                    <option value="tlh">The Lord's Habitation (Choir Unit)</option>
+                                    <option value="press">Kabod Media (Press Unit)</option>
+                                    <option value="drama">The Potter's Vessel (Drama Unit)</option>
+                                    <option value="technical">Technical Unit</option>
+                                    <option value="ushering">Ushering Unit</option>
+                                    <option value="none">None</option>
+                                </select>
+                                <select name="badge" id="badge" title="badge">
+                                    <option value="">Badge (all)</option>
+                                    <option value="member">MEMBER</option>
+                                    <option value="acmember">AC-MEMBER</option>
+                                    <option value="steward">STEWARD</option>
+                                    <option value="acsteward">AC-STEWARD</option>
+                                    <option value="devotee">DEVOTEE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dmemberlist">
+                            <p class="total">Total: 0</p>        
+                            <ul class="tableheader">
+                                <li>Name</li>
+                                <li>Email</li>
+                                <li>Family</li>
+                                <li>Unit</li>
+                                <li class="bi bi-star-fill"></li>
+                            </ul>
+                            <div class="tablecontainer">
+                                <div class="noconcard">
+                                    <i class="nocon bi bi-bell-slash-fill"></i>
+                                    <i class="nocon">No contents.</i>
+                                </div>
+                                <!-- <div class="tabledata">
+                                    <div>
+                                        <aside class="img">
+                                            <img src="" alt=".">
+                                            <p class="imgfallback">M</p>
+                                        </aside>
+                                        <p>Prime Spark</p>
+                                    </div>
+                                    <b>example@gmail.com</b>
+                                    <b>Glory</b>
+                                    <b>Press</b>
+                                    <b class="tdstatus badge devotee bi bi-trophy-fill"></b>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>  
+                    
+                    <!-- <div class="buttons">
+                        <a href="#">Create Member</a>
+                        <button type="button">Export CSV</button>
+                    </div> -->
+
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="content" id="details">
+                <div class="breadcrumb">
+                    <a href="ad-dashboard.html">Dashboard</a> >
+                    <a href="#members">Members</a> >
+                    <a href="#">Prime</a>
+                </div>
+                <div class="main">
+                    <h4><a href="#members" title="back" class="back fas fa-caret-left"></a> Prime</h4>
+             
+                    <div class="dprofdetails">
+                        <div class="memprofile">
+                            <label for="editacct"><i class="fas fa-pen"></i>&nbsp;&nbsp;Edit Member</label>
+                            <label for="delacct"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Member</label>
+                            <div class="d1">
+                                <div class="profilecon">
+                                    <div class="coverimg">
+                                        <aside class="img">
+                                            <a href="#" title="Profile">
+                                                <img src="" alt=".">
+                                                <p class="imgfallback">M</p>
+                                            </a>
+                                        </aside>
+                                    </div>
+                                    <div class="pp">
+                                        <b>Member</b><br>
+                                        <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                    </div>
+                                </div>
+                                <div class="profiledet">
+                                    <ul>
+                                        <li>Personal</li>                                    
+                                        <li>
+                                            <b>Full Name</b>
+                                            <span>Member</span>
+                                        </li>
+                                        <li>
+                                            <b>Email</b>
+                                            <span>example@gmail.com</span>
+                                        </li>
+                                        <li>
+                                            <b>Phone</b>
+                                            <span>081234567890</span>
+                                        </li>
+                                        <li>
+                                            <b>D.O.B</b>
+                                            <span>Day Month</span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>Nifes</li>
+                                        <li>
+                                            <b>Family</b>
+                                            <span>
+                                                <select title="Family" readonly>
+                                                    <option value="">Member Family</option>
+                                                    <option value="dominion">Dominion Family</option>
+                                                    <option value="beacon">Beacon Family</option>
+                                                    <option value="glory">Glory Family</option>
+                                                    <option value="rehoboth">Rehoboth Family</option>
+                                                </select>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <b>Unit</b>
+                                            <span>
+                                                <select title="Unit" readonly>                                                    
+                                                    <option value="">Member Unit</option>
+                                                    <option value="evangelism">Evangelism Unit</option>
+                                                    <option value="bible-study">Bible Study Unit</option>
+                                                    <option value="prayer">Prayer Unit</option>
+                                                    <option value="tlh">The Lord's Habitation (Choir Unit)</option>
+                                                    <option value="press">Kabod Media (Press Unit)</option>
+                                                    <option value="drama">The Potter's Vessel (Drama Unit)</option>
+                                                    <option value="technical">Technical Unit</option>
+                                                    <option value="ushering">Ushering Unit</option>
+                                                    <option value="none">None</option>
+                                                </select>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>School</li>
+                                        <li>
+                                            <b>Dept.</b>
+                                            <span>Department</span>
+                                        </li>
+                                        <li>
+                                            <b>Faculty</b>
+                                            <span>Faculty</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="memrecord">
+                            <h4>RECORDS</h4>
+                            <div class="panel">
+                                <div class="chart">
+                                    <b><i class="bi bi-bar-chart-fill"></i>&nbsp;&nbsp;Chart</b>
+                                    <div class="container">
+                                        <ul class="cali">
+                                            <li>100%</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>50%</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>-</li>
+                                            <li>0%</li>
+                                        </ul>
+                                        <div class="barchart">
+                                            <div class="bar"></div>
+                                            <p class="barvalue">0%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="summary">
+                                    <b><i class="fas fa-list"></i>&nbsp;&nbsp;Summary</b>
+                                    <ul>                            
+                                        <li>
+                                            <div class="bigbadge member">
+                                                <i class="bi bi-star-fill"></i>
+                                                <p>MEMBER</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-sync"></i>
+                                            <b>Consistency</b> <span>0%</span>
+                                        </li>                                        
+                                        <li>
+                                            <i class="fa-regular fa-circle-check"></i>
+                                            <b>Attended</b> <span>0</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa-regular fa-circle-xmark"></i>
+                                            <b>Missed</b> <span>0</span>
+                                        </li>
+                                    </ul>
+                                </div>                       
+                            </div>
+
+                            <div class="attendedserv">
+                                <b><i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;Attended Services<br>
+                                    <span class="total">Total: 0</span>
+                                </b>
+                                <div class="servcon">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-bell-slash-fill"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="attserv">
+                                        <img src="../../resources/bstudyblueblack.jpg" alt="">
+                                        <ul>
+                                            <li><b>Title</b><span>Bible Study</span></li>
+                                            <li><b>Date</b><span>Thurs. 23th October 2025</span></li>
+                                        </ul>
+                                        <a href="ad-services.html#details">Details</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+
+                    <!-- Edit Acct -->
+                    <input type="checkbox" name="editacct" id="editacct">
+                    <div class="editcov"></div>
+                    <div class="editcon">
+                        <h3><i class="fas fa-pen"></i><span>Edit Member</span>
+                            <label for="editacct" class="fas fa-x"></label>
+                        </h3>
+                        <form action="" method="post" class="form">
+                            <!-- <a href="#change-password" class="chpswd"><i class="bi bi-shield-lock-fill"></i>&nbsp;&nbsp;Change Password</a> -->
+                            
+                            <div class="editdet">
+                                <b>PERSONAL</b>
+                                <div>
+                                    <label for="email">Email <span>Permanent</span></label>
+                                    <input type="email" name="email" id="email" readonly>
+                                </div>
+                                <div>
+                                    <label for="surname">Surname</label>
+                                    <input type="text" name="surname" id="surname">
+                                </div>
+                                <div>
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" id="firstname">
+                                </div>
+                                <div>
+                                    <label for="othername">Other Name <span>Optional</span></label>
+                                    <input type="text" name="othername" id="othername">
+                                </div>
+                                <div>
+                                    <label for="phone">Phone No.</label>
+                                    <input type="number" name="phone" id="phone">
+                                </div>
+                                <div>
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" name="dob" id="dob">
+                                </div>
+                                <b>NIFES</b>
+                                <div>
+                                    <label for="family">Nifes Family</label>
+                                    <select name="family" id="family">
+                                        <option value="">Member Family</option>
+                                        <option value="dominion">Dominion Family</option>
+                                        <option value="beacon">Beacon Family</option>
+                                        <option value="glory">Glory Family</option>
+                                        <option value="rehoboth">Rehoboth Family</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="unit">Unit</label>
+                                    <select name="unit" id="unit">
+                                        <option value="">Member Unit</option>
+                                        <option value="evangelism">Evangelism Unit</option>
+                                        <option value="bible-study">Bible Study Unit</option>
+                                        <option value="prayer">Prayer Unit</option>
+                                        <option value="tlh">The Lord's Habitation (Choir Unit)</option>
+                                        <option value="press">Kabod Media (Press Unit)</option>
+                                        <option value="drama">The Potter's Vessel (Drama Unit)</option>
+                                        <option value="technical">Technical Unit</option>
+                                        <option value="ushering">Ushering Unit</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                </div>
+                                <b>SCHOOL</b>
+                                <div>
+                                    <label for="faculty">Faculty</label>
+                                    <select name="faculty" id="faculty">
+                                        <option value="SEET">SEET</option>
+                                        <option value="SIPET">SIPET</option>
+                                        <option value="SET">SET</option>
+                                        <option value="SICT">SICT</option>
+                                        <option value="SAAT">SAAT</option>
+                                        <option value="SPS">SPS</option>
+                                        <option value="SLS">SLS</option>
+                                        <option value="SIT">SIT</option>
+                                        <option value="SSTE">SSTE</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="dept">Department</label>
+                                    <input type="text" name="dept" id="dept">
+                                </div>                               
+                            </div>
+                            <section class="edbtns">
+                                <button type="button"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
+                            </section>
+                        </form>
+                    </div>
+
+
+                    <!-- Delete Member -->
+                     
+                    <input type="checkbox" name="delacct" id="delacct" class="delinput">
+                    <div class="delcov"></div>
+                    <div class="delcon">
+                        <i class="fas fa-user"></i>
+                        <h3>Delete Member</h3>
+                        <p>
+                            All information about this member will be deleted.
+                            Including badge and consistency.<br>
+                            <b>THIS CANNOT BE UNDONE!!!</b>
+                        </p>
+                        <div>
+                            <a href="#">Delete</a>
+                            <label for="delacct">Cancel</label>
+                        </div>
+                    </div>
+
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+</body>
+</html>

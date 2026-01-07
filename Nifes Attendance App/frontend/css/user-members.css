@@ -1,0 +1,220 @@
+
+.sec1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em 0;
+    overflow: hidden;
+}
+.todaybirth{
+    flex: 1 0 45%;
+}
+.weekbirth{
+    flex: 1 0 50%;
+}
+.todaybirth, .weekbirth{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+    overflow: hidden;
+}
+.todaybirth b:first-child, .weekbirth b:first-child{
+    font-size: .9em;
+}
+.todaybirth .info{
+    margin: 0 auto;
+    padding: 1em;
+    width: 90%;
+    max-width: 20em;
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.todaybirth .profilecard{
+    flex: 1 0 100%;
+    scroll-snap-align: center;
+}
+.weekbirth .info{
+    margin: 0 auto;
+    padding: 1em;
+    width: 90%;
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.weekbirth .profilecard{
+    flex: 1 0 100%;
+}
+
+.dmembers{
+    width: 100%;
+    height: 100%;
+    min-height: 25em;
+    border: 1px solid var(--textcolor); 
+    border-radius: 1.5em;
+    overflow: hidden;
+}
+#search{
+    display: none;
+}
+#search:checked ~ #searchcon{
+    display: flex;
+}
+#search:checked ~ #dmemberscon{
+    display: none;
+}
+.sec{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+#searchcon{
+    display: none;
+}
+.sec .topnav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: .5em 1em;
+    border-bottom: 1px solid var(--textcolor);
+}
+.sec input{
+    display: none;
+}
+.sec section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.family, .unit, .faculty{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 100%
+}
+#family:checked ~ section .family{
+    display: flex;
+}
+#unit:checked ~ section .unit{
+    display: flex;
+}
+#faculty:checked ~ section .faculty{
+    display: flex;
+}
+
+
+.catfilter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-weight: 600;
+    padding: .3em 1em;
+    width: 100%;
+    border-bottom: 1px solid var(--textcolor);
+}
+.catfilter label{
+    width: fit-content;
+    font-size: .8em;
+    padding: .3em .8em;
+    border-radius: 7px;
+    border: 1px solid var(--textcolor);
+    cursor: pointer;
+}
+.catfilter label:hover{
+    border-color: var(--secondarycolor);
+    background: var(--secondarycolor);
+    color: #fff;
+}
+#family:checked ~ .catfilter label[for="family"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+#unit:checked ~ .catfilter label[for="unit"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+#faculty:checked ~ .catfilter label[for="faculty"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+.topnav label[for="search"], .topnav div button{
+    font-size: .7em;
+    border-radius: 50%;
+    padding: .5em;
+    border: 1px solid var(--textcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--textcolor);
+}
+.topnav label[for="search"]:hover, .topnav div button:hover{
+    border-color: var(--primarycolor);
+    background: var(--primarycolor);
+    color: #fff;
+}
+.sec .total{
+    width: fit-content;
+    font-weight: 600;
+    font-size: .8em;
+    padding: .3em .8em;
+    margin: .5em 1em;
+    border-radius: 7px;
+    background: var(--nifesgrad);
+    color: #fff;
+}
+
+
+.membercontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    padding: .5em;
+    height: fit-content;
+    width: 100%;
+    overflow-y: auto;
+    margin: 0 auto .3em;
+}
+
+
+.sec2 .topnav div{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-weight: 600;
+    width: 100%;
+    max-width: 20em;
+    font-size: 1em;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.sec2 .topnav div input:hover{
+    background: var(--lightshade);
+}
+.sec2 .topnav div input{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 1000px;
+    padding: .3em .8em;
+    cursor: pointer;
+    border: 1px solid var(--textcolor);
+    background: transparent;
+    color: var(--textcolor)
+}

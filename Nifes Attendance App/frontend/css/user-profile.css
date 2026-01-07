@@ -1,0 +1,608 @@
+
+
+/* Profile */
+.a{
+    height: fit-content;
+    max-width: fit-content;
+    padding: .5em .7em;
+    border-radius: .7em;
+    border: 1px solid var(--bordercolor);
+    color: var(--textcolor);
+    font-weight: 600;
+    font-size: .8em;
+    margin: auto 0 0;
+    opacity: 0.7;
+}
+.a:hover{
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+    color: #fff;
+    opacity: 1;
+}
+.mainwidth1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 1em;
+}
+.mainwidth1 .d1{
+    flex: 1 0 50%;
+    padding: 1em;
+    border-radius: 3em;
+    border: 1px solid var(--textcolor);
+}
+.mainwidth1 .dtabs{
+    flex: 1 0 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.dtabs .tabs{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1.5em;
+    border-radius: 30px;
+    border: 1px solid var(--textcolor);
+}
+.mainwidth2{
+    width: 100%;
+    max-width: 30em;
+    margin: 0 auto;
+}
+.profilecon{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+}
+.coverimg{
+    position: relative;
+}
+.coverimg aside{
+    width: 60dvw;
+    height: 60dvw;
+    max-width: 20em;
+    max-height: 20em;
+}
+.coverimg aside .imgfallback{
+    background: var(--nifesgrad);    
+    font-size: 3em;
+    color: #fff;
+}
+.profilecon .pp{
+    line-height: 18px;
+    font-size: 1.2em;
+    text-align: center;
+}
+.profilecon .pp span{
+    font-size: .8em;
+    opacity: 0.8;
+}
+.profiledet{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.profiledet ul{
+    list-style: none;
+    padding: 1em;
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    border-radius: 2em;
+    font-size: .9em;
+    background: var(--shade);
+    border: 1px solid var(--transborder);
+}
+.profiledet ul li:first-child{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9em;
+    color: var(--textprimarycolor);
+    margin-bottom: .5em;
+    margin-top: 0;
+    flex: 1 0 100%;
+    padding: 0;
+    background: none;
+    border: none;
+}
+.profiledet ul li{
+    flex: 1 0 100%;
+    padding: 1em;
+    gap: .4em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+}
+.profiledet ul li b{
+    width: fit-content;
+    padding: .2em .7em;
+    color: #fff;
+    background: var(--nifesgrad);
+    border-radius: 7px;
+    font-size: .8em;
+    font-weight: 500;
+}
+.profiledet ul li span{
+    margin: 0;
+}
+
+.profile-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.profile-btns a, .profile-btns label{
+    padding: 1em;
+    width: 90%;
+    max-width: 15em;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 1em;
+    border: 1px solid var(--textcolor);
+    font-size: .8em;
+    color: var(--textcolor);
+    font-weight: 500;
+    cursor: pointer;    
+}
+.profile-btns a:hover{
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+    color: #fff;
+}
+.profile-btns label{
+    background: #aa000020;
+    border-color: #a00;
+    color: #a00;
+}
+.profile-btns label:hover{
+    background: #a00;
+    border-color: #a00;
+    color: #fff;
+}
+
+.profilecard{
+    margin: 0 auto;
+    width: 100%;
+}
+.help h4{
+    font-weight: normal;
+}
+
+#delacct{
+    display: none;
+}
+#delacct:checked ~ .delcov{
+    display: block;
+}
+#delacct:checked ~ .delcon{
+    display: flex;
+}
+.delcov{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    background: #00000090;
+    display: none;
+}
+.delcon{
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 80dvw;
+    max-width: 25em;
+    height: 80dvh;
+    max-height: fit-content;
+    overflow-y: auto;
+    padding: 1em;
+    border-radius: 2em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    background: var(--shade);
+    color: var(--textcolor);
+    border: 1px solid var(--transborder);
+    text-align: center;
+    box-shadow: 3px 3px 6px var(--shadowcolor);
+    font-size: .9em;
+    animation: info 0.5s ease 1 forwards;
+}
+.delcon i{
+    font-size: 4em;
+    color: #a00;
+}
+.delcon p{
+    font-size: .9em;
+    text-align: left;
+    padding: 1em;
+    border-left: 2px solid #a00;
+    background: #aa000020;
+}
+.delcon div{
+    display: flex;
+    gap: 1em;
+    padding-top: 1em;
+    width: 100%;
+}
+.delcon div a, .delcon div label{
+    padding: .7em;
+    border-radius: 1em;
+    width: 100%;
+    font-size: .9em;
+    border: 1px solid var(--bordercolor);
+    font-weight: 500;
+}
+.delcon div a{
+    color: #a00;
+    border-color: #a00;
+    background-color: #aa000020;
+}
+.delcon div a:hover{
+    color: #fff;
+    border-color: #a00;
+    background-color: #a00;
+}
+.delcon div label:hover{
+    color: #fff;
+    border-color: var(--primarycolor);
+    background-color: var(--primarycolor);
+}
+
+/* Edit profile */
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-top: 1em;
+}
+.form .chpswd{
+    text-align: center;
+    width: fit-content;
+    margin: 0 0 0 auto;
+    font-size: .8em;
+    padding: .5em 1em;
+    border-radius: 1em;
+    border: 1px solid var(--bordercolor);
+    color: var(--textcolor);
+}
+ .form .chpswd:hover{
+    color: #fff;
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+.form div{
+    padding: 1em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+    display: flex;
+    flex-direction: column;
+}
+.form div:first-child{
+    padding: 1em 1em 2em 1em;
+}
+.form div b{
+    font-size: .8em;
+    font-weight: 700;
+    color: var(--textprimarycolor);
+}
+.form div input[type="file"]{
+    display: none;
+}
+.form div input:disabled, .form div select:disabled{
+    cursor: not-allowed;
+    background: var(--lightshade);
+    border-color: var(--lightshade);
+}
+.image{
+    gap: 1em;
+    position: relative;
+}
+.image label{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    translate: -50%;
+    bottom: 1em;
+    font-size: 1em;
+    padding: .2em .7em;
+    background: var(--nifesgrad);
+    color: #fff;
+    border-radius: .7em;
+    border: 1px solid var(--bordercolor);
+    box-shadow: 2px 2px 6px var(--shadowcolor);
+    cursor: pointer;
+}
+.image label:hover{
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+.image aside{
+    margin: 0 auto .5em;
+    height: 5em;
+    width: 5em;
+    font-size: 2em;
+}
+.editdet{
+    gap: 1em;
+}
+.editdet div{
+    border: none;
+    padding: 0 1em;
+    gap: .2em;
+}
+.editdet b:first-child{
+    margin-top: 0;
+}
+.editdet b{
+    margin-top: 1em;
+}
+.editdet label{
+    font-size: .9em;
+}
+.editdet label span{
+    font-size: .8em;
+    padding: .1em .4em;
+    border-radius: 7px;
+    border: 1px solid var(--bordercolor);
+    color: var(--bordercolor);
+}
+.editdet div aside{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.editdet input, .editdet select{
+    padding: .7em 1em;
+    border-radius: 1em;
+    border: 1px solid var(--bordercolor);
+    outline: none;
+    color: var(--textcolor);
+    background: transparent;
+}
+.editdet input:hover, .editdet input:focus, .editdet select:hover, .editdet select:focus{
+    background: var(--lightshade);
+}
+.edbtns{
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.edbtns a, .edbtns button{
+    text-align: center;
+    font-size: .8em;
+    padding: .5em .7em;
+    border-radius: .8em;
+    border: 1px solid var(--textcolor);
+    color: var(--textcolor);
+}
+.edbtns button{
+    margin-left: auto;
+    border-color: green;
+    color: green;
+    background: #00800030;
+}
+.edbtns a:hover{
+    color: #fff;
+    background: var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+.edbtns button:hover{
+    color: #fff;
+    background: green;
+}
+
+/* Badge */
+.allbadge{
+    font-weight: 600;
+}
+.preview{
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    padding: .5em;
+    overflow-x: auto;
+}
+
+.firstsection{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: fit-content;
+}
+.firstsection .sections{
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    border: 1px solid var(--textcolor);
+    overflow: hidden;
+    max-height: fit-content;
+    margin: 0 auto;
+    max-width: 30em;
+}
+.sections input{
+    display: none;
+}
+.sections b code{
+    font-size: .8em;
+    padding: .1em .4em;
+    border-radius: 7px;
+    border: 1px solid var(--bordercolor);
+    color: var(--bordercolor);
+}
+.labels{
+    margin-top: 1em;
+    display: none;
+}
+.labels label{
+    border: 1px solid var(--bordercolor);
+    padding: .5em;
+    margin: 1em;
+    cursor: pointer;
+    font-size: .9em;
+    border-radius: 1em;
+}
+.labels label:hover{
+    background: var(--lightshade);
+}
+.firstsec{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+#memberbadge:checked ~ .firstsec #member{
+    display: flex;
+}
+#acmemberbadge:checked ~ .firstsec #acmember{
+    display: flex;
+}
+#stewardbadge:checked ~ .firstsec #steward{
+    display: flex;
+}
+#acstewardbadge:checked ~ .firstsec #acsteward{
+    display: flex;
+}
+#devoteebadge:checked ~ .firstsec #devotee{
+    display: flex;
+}
+.firstsec .thisbadge{
+    display: none;
+}
+
+.thisbadge{
+    scroll-snap-align: center;
+    flex: 1 0 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    gap: .7em;
+    font-size: .95em;
+    border-radius: 2.5em;
+    border: 1px solid var(--transborder);
+    overflow: hidden;
+    max-height: fit-content;
+    background: var(--shade);
+}
+.bigbadge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    width: max-content;
+    height: max-content;
+    max-width: max-content;
+    max-height: max-content;
+    border-radius: 1.5em;
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 5px 5px 10px #fff5 inset,
+    -10px -10px 15px var(--shadowcolor) inset,
+    5px 5px 10px var(--shadowcolor);
+}
+.bigbadge i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    padding: .5em;
+}
+.bigbadge p{
+    text-transform: uppercase;
+    padding: .3em 1em;
+    font-size: .7em;
+    border-radius: 8px;
+    color: #fff;
+    background: #ffffff20;
+    border: 1px solid #ffffff50;
+    box-shadow: 1px 1px 5px #00000020;
+    font-weight: 500;
+    width: max-content;
+    margin-top: auto;
+}
+.badgeinfo{
+    flex: 1 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7em;
+    font-size: .9em;
+}
+.badgeinfo div{
+    flex: 1 0 45%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+}
+.thisbadge .thisdiv b{
+    font-size: .85em;
+    font-weight: 500;
+    margin-bottom: .5em;
+    padding: .2em .7em;
+    border-radius: .6em;
+    color: #fff;
+    width: fit-content;
+    background: var(--nifesgrad);
+}
+.thisbadge .thisdiv p, .thisbadge .thisdiv ul{
+    font-size: 1em;
+    margin-left: .5em;
+}
+.badgeinfo div p{
+    text-transform: uppercase;
+}
+.desc{
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    font-size: .9em;
+    height: fit-content;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+    width: 100%
+}
+.require{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    font-size: .9em;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+}
+.require ul{
+    list-style: ">  ";
+    padding: 0 0 0 1em;
+}
+
+.badgecon{
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: .5em;
+}

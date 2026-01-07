@@ -1,0 +1,36 @@
+{
+  "name": "nifes-futmx-attendance-app",
+  "version": "1.0.0",
+  "description": "A platform for NIFES FUT Minna students to track and attend NIFES programs and services.",
+  "keywords": [
+    "nifesfutmx"
+  ],
+  "homepage": "https://github.com/primespark001/nifesfutmx-attendance-app#readme",
+  "bugs": {
+    "url": "https://github.com/primespark001/nifesfutmx-attendance-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primespark001/nifesfutmx-attendance-app.git"
+  },
+  "license": "ISC",
+  "author": "NIFES FUTMX & Prime Spark",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env index.js",
+    "dev": "node --watch --env-file=.env index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.10",
+    "uuid": "^13.0.0"
+  }
+}

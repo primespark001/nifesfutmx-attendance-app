@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+        </div>
+        <p> NIFES FUTMX </p>
+        <a href="/" title="Home"><i class="fas fa-home"></i></a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="div">        
+            <div class="top">
+                <h2>Forgot Password</h2>
+                <p>Unable to access your account? Reset password.</p>
+            </div>
+            <form>
+                <i>
+                    We will send a code to your email. 
+                    Use the code as to reset your password.<br/>
+                    <b>NOTE: CODE EXPIRES IN 90 SECONDS</b>
+                </i>
+                <div>
+                    <label for="forgotpassemail">Email</label>
+                    <input type="email" name="forgotpassemail" id="forgotpassemail" placeholder="e.g. example@gmail.com" required>
+                </div>
+                <div>
+                    <button type="button" onclick="forgotpswd()">Send Code</button>
+                    <a href="/auth/login" class="alink"><&nbsp;&nbsp;Back to Login</a>
+                </div>
+            </form>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <p class="last">&copy; NIFES FUT Minna - All rights reserved.</p>
+            <p class="last">Building tomorrow's leaders today...</p>
+        </footer>
+    </main>
+    
+    <div class="resspass" id="resspass">
+        <form>
+            <h2>Reset Password</h2>
+            <div>
+                <label for="code">Code</label>
+                <input type="text" name="code" id="code" placeholder="e.g. 123abc" required>
+            </div>
+            <div>
+                <label for="pswd">New Password</label>
+                <input type="password" name="pswd" id="pswd" placeholder="e.g. *_*" required>
+            </div>
+            <div>
+                <button type="button" onclick="resetpswd()">Reset password</button>
+                <a href="#" class="alink" onclick="closeRessPass()">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <p id="displaytimer" class="displaytimer">CODE EXPIRES IN <b id="timervalue">00</b>s</p>
+
+    <div class="loading" id="loading">
+        <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+        <div class="rotor"></div>
+    </div>
+    <p class="mess" id="mess">
+        <i class="fas fa-circle-check"></i>
+        <span>Registration Successful</span>
+    </p>
+
+
+    <script src="../../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,649 @@
+
+
+.panel{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em 0;
+}
+.chart, .summary{
+    border-radius: 2em;    
+    border: 1px solid var(--textcolor);
+    padding: 1em 1.5em;
+    display: flex;
+    flex-direction: column;    
+}
+.chart{
+    flex: 1 0 50%;
+    min-height: 20em;
+    gap: 2em;
+    padding: 1em 1.5em 2em;
+}
+.summary{
+    flex: 1 0 44%;
+}
+.chart .container{
+    display: flex;
+    align-items: center;
+    gap: .2em;
+    height: 100%;
+}
+.container .cali{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-weight: 600;
+    font-size: .8em;
+    height: 105%;
+    justify-content: space-between;
+    width: 3em;
+}
+.container .barchart{
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-left-color: var(--textcolor);
+    border-bottom-color: var(--textcolor);
+    display: flex;
+    align-items: end;
+    gap: .5em;
+    justify-content: center;
+    padding: 0 1em;
+}
+.barchart .bar{
+    width: 90%;
+    height: 0%;
+    background: var(--nifesgrad);
+    border-radius: 10px 10px 0 0;
+}
+.barchart .barvalue{
+    height: 0%;
+    font-weight: 600;
+}
+
+.summary ul{
+    list-style-type: none;
+    padding: 1em 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    margin: 0 auto;
+    width: 100%;
+}
+.summary ul li{
+    flex: 1 0 40%;
+    display: flex;
+    flex-direction: column;
+    padding: .5em 1em;
+    border-radius: 20px;
+    background: var(--nifesgrad);
+    color: #fff;
+}
+.summary ul li i{
+    font-size: 2em;
+    padding: .2em 0 .4em;
+}
+.summary ul li b{
+    font-size: .65em;
+    margin-top: auto;
+    font-weight: 500;
+}
+.summary ul li span{    
+    font-size: 2em;
+}
+.summary p b{
+    height: fit-content;
+    font-size: .7em;
+    padding: .3em .5em;
+    border-radius: 5px;
+    background: var(--nifesgrad);
+    color: #fff;
+    font-weight: normal;
+}
+
+.details{
+    width: 100%;
+    height: 100%;
+    min-height: 25em;
+    border: 1px solid var(--textcolor); 
+    border-radius: 1.5em;
+    overflow: hidden;
+}
+#search{
+    display: none;
+}
+#search:checked ~ #searchcon{
+    display: flex;
+}
+#search:checked ~ #detailscon{
+    display: none;
+}
+.sec{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+#searchcon{
+    display: none;
+}
+.sec .topnav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding: .5em 1em;
+    border-bottom: 1px solid var(--textcolor);
+}
+.sec input{
+    display: none;
+}
+.sec section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+#all:checked ~ section .all{
+    display: flex;
+}
+#attended:checked ~ section .attended{
+    display: flex;
+}
+#missed:checked ~ section .missed{
+    display: flex;
+}
+.all, .attended, .missed{
+    flex-direction: column;
+    height: 100%;
+    width: 100%
+}
+.all{
+    display: none;
+}
+.attended{
+    display: none;
+}
+.missed{
+    display: none;
+}
+
+
+.catfilter{
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    font-weight: 600;
+    padding: .5em 1em;
+    font-size: .8em;
+    width: 100%;
+    border-bottom: 1px solid var(--textcolor);
+}
+.catfilter i{
+    font-size: 1em;
+}
+.catfilter div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    align-items: center;
+}
+.catfilter div label{
+    font-size: .9em;
+    padding: .2em .5em;
+    border-radius: 7px;
+    border: 1px solid var(--textcolor);
+    cursor: pointer;
+}
+.catfilter div label:hover{
+    border-color: var(--secondarycolor);
+    background: var(--secondarycolor);
+    color: #fff;
+}
+#all:checked ~ .catfilter div label[for="all"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+#attended:checked ~ .catfilter div label[for="attended"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+#missed:checked ~ .catfilter div label[for="missed"]{
+    background: var(--primarycolor);
+    color: #fff;
+    border-color: var(--primarycolor);
+}
+.topnav label[for="search"], .topnav div button{
+    font-size: .7em;
+    border-radius: 50%;
+    padding: .5em;
+    border: 1px solid var(--textcolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--textcolor);
+}
+.topnav label[for="search"]:hover, .topnav div button:hover{
+    border-color: var(--primarycolor);
+    background: var(--primarycolor);
+    color: #fff;
+}
+.sec .total{
+    width: fit-content;
+    font-weight: 600;
+    font-size: .8em;
+    padding: .3em .8em;
+    margin: .5em 1em;
+    border-radius: 10px;
+    background: var(--nifesgrad);
+    color: #fff;
+}
+
+.tableheader{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: 0 1em;
+    list-style-type: none;
+    font-size: .8em;
+    background: var(--lightshade);
+    border-top: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+}
+.tableheader li{ 
+    padding: .3em .8em;
+    border-left: 1px solid var(--bordercolor);
+    width: 30%;
+    max-width: 15em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+}
+.tableheader li:first-child{ 
+    width: 100%;
+    max-width: 100%;
+    border-left: 0px solid transparent;
+}
+.tableheader li:last-child{ 
+    max-width: 10em;
+}
+.tablecontainer{ 
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    padding: .3em;
+    height: 100%;
+    overflow-y: auto;
+    margin: .1em 0;
+}
+
+.tabledata{
+    display: flex;
+    align-items: center;
+    padding: .3em;
+    border-radius: 1em;
+    border: 1px solid var(--transborder);
+    gap: .5em;
+    cursor: pointer;
+}
+.tabledata:hover{
+    background: var(--lightshade);
+    border-color: var(--lightshade);
+}
+.tabledata b{
+    width: 30%;
+    max-width: 15em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: .9em;
+    padding: 0 .4em;
+}
+.tabledata .record{
+    width: 30%;
+    max-width: 10em;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: .3em .5em;
+    border-radius: 1000px;
+    color: #fff;
+    font-size: .8em;
+}
+.tabledata div{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+.tabledata div img{
+    height: 10dvw;
+    max-height: 2.5em;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.tabledata div p{ 
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.sec2 .topnav div{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-weight: 600;
+    width: 100%;
+    max-width: 20em;
+    font-size: 1em;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.sec2 .topnav div input:hover{
+    background: var(--lightshade);
+}
+.sec2 .topnav div input{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 1000px;
+    padding: .3em .8em;
+    cursor: pointer;
+    border: 1px solid var(--textcolor);
+    background: transparent;
+    color: var(--textcolor);
+}
+
+
+/* Table Data Details */
+.green{
+    background: #080;
+    color: #fff;
+}
+.red{
+    background: #c00;
+    color: #fff;
+}
+.dtabledatacover{
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #00000090;
+}
+.tabledatadetails{
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 30em;
+    height: 85%;
+    max-height: 50em;
+    display: none;
+    overflow: hidden;
+    background: var(--shade);
+    border: 1px solid var(--transborder);
+    border-radius: 2em;
+    box-shadow: 3px 3px 10px var(--shadowcolor);
+    animation: info 0.5s ease 1 forwards;
+
+}
+
+.tabledatadetails .dscroller{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.tabledatadetails img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2em;
+}
+
+.tabledatadetails ul{
+    list-style: none;
+    width: 100%;
+    padding: 1em;
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tabledatadetails ul li{
+    flex: 1 0 40%;
+    padding: 1em;
+    gap: .4em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+    font-size: .9em;
+}
+.tabledatadetails ul li b{
+    width: fit-content;
+    padding: .2em .7em;
+    color: #fff;
+    background: var(--nifesgrad);
+    border-radius: 7px;
+    font-size: .8em;
+    font-weight: 500;
+}
+.tabledatadetails ul li span{
+    margin: 0;
+}
+
+#servicedisplay{
+    display: none;
+}
+#servicedisplay:checked ~ .dtabledatacover{
+    display: block;
+}
+#servicedisplay:checked ~ .tabledatadetails{
+    display: flex;
+}
+
+.attendstatus{
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    translate: -50%;
+    border-radius: 1000px;
+    padding: .5em .7em;
+    border: 1px solid #fff;
+    font-size: .9em;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: .3em;
+}
+
+/* Service */
+.servicecontent{   
+    width: 100%;
+    max-width: 30em;
+    margin: 1em auto 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 2.5em;
+    border: 1px solid var(--textcolor);
+    padding: .5em;
+    gap: .5em;
+    position: relative;
+}
+.servicecontent img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2.2em;
+}
+
+.servicecontent ul{
+    list-style: none;
+    width: 100%;
+    padding: 0 .5em .5em;
+    gap: .5em;
+    display: flex;
+    flex-wrap: wrap;
+}
+.servicecontent ul li{
+    flex: 1 0 40%;
+    padding: 1em;
+    gap: .2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5em;
+    background: var(--lightshade);
+    font-size: .9em;
+}
+.servicecontent ul li b{
+    width: fit-content;
+    padding: .2em .7em;
+    color: #fff;
+    background: var(--nifesgrad);
+    border-radius: 10px;
+    font-size: .9em;
+    font-weight: 500;
+}
+.servicecontent ul li span{
+    margin: 0;
+}
+.servicecontent .description{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background: var(--lightshade);
+    border-radius: 2em;
+    margin: .5em;
+    font-size: .9em;
+}
+.servicecontent .description b{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.servicecontent .description p{
+    padding: .5em;
+}                              
+
+.serviceactions{   
+    width: 100%;
+    max-width: 30em;
+    margin: 2em auto 0;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    overflow: hidden;
+    position: relative;
+}
+.serviceactions .servicestatus{
+    display: flex;
+    flex-direction: column;
+    padding: .3em;
+    font-size: .9em;
+    text-align: center;
+    margin-right: auto;
+    border-radius: 1em;
+    border: 1px solid var(--textcolor);
+    font-weight: 600;
+}
+
+
+#checkin{
+    display: none;
+}
+#checkin:checked ~ .servicecontent .attendstatus{
+    display: flex;
+}
+#checkin:checked ~ .serviceactions .checker label{
+    background: #080;
+    color: #fff;
+    border-color: #080;
+}
+#checkin:checked ~ .serviceactions .checker p{
+    display: block;
+}
+#checkin:checked ~ .serviceactions .checker label span::after{
+    opacity: 1;
+}
+.checker{
+    position: relative;
+}
+.checker label, .serviceactions a{
+    padding: .5em .8em;
+    border-radius: 1em;
+    border: 2px solid var(--textcolor);
+    color: var(--textcolor);
+    font-size: .8em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    cursor: pointer;
+    position: relative;
+}
+.checker p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: none;
+    cursor: not-allowed;
+}
+.checker label:hover, .serviceactions a:hover{
+    border-color: var(--lightshade);
+    background: var(--lightshade);
+}
+.checker label i{
+    font-size: 1.2em;
+}
+.checker label span{
+    position: relative;
+}
+.checker label span::after{
+    content: "Checked";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    background: #080;
+    opacity: 0;
+}
+
+@keyframes info {
+    from{
+        top: 45%;
+        opacity: 0;
+    }
+    to{
+        top: 50%;
+        opacity: 1;
+    }
+}

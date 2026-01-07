@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/usergeneral.css">
+    <link rel="stylesheet" href="../../css/user-members.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="#" class="links" title="dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="links" title="attendance"><i class="bi bi-bar-chart-line-fill"></i><span>Attendance</span></a>
+            <a href="#" class="links" title="announcements"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="#" class="links activenav" title="members"><i class="bi bi-people-fill"></i><span>Members</span></a>
+            <a href="#" class="links" title="profile"><i class="bi bi-person-fill"></i><span>Profile</span></a>
+            <hr>
+            <section class="theme">
+                <input type="radio" name="theme" id="system-theme" checked onclick="userTheme('system')">
+                <input type="radio" name="theme" id="light-theme" onclick="userTheme('light')">
+                <input type="radio" name="theme" id="dark-theme" onclick="userTheme('dark')">
+                <label for="system-theme">
+                    <i class="bi bi-laptop"></i>
+                    <p>System</p>
+                </label>
+                <label for="light-theme">
+                    <i class="bi bi-sun"></i>
+                    <p>Light</p>
+                </label>
+                <label for="dark-theme">
+                    <i class="bi bi-moon"></i>
+                    <p>Dark</p>
+                </label>
+            </section>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Dashboard</h3>
+            <label for="topp" class="topp">
+                <aside class="img">
+                    <img src="" alt="." class="userimage">
+                    <p class="imgfallback userinit">M</p>
+                </aside>
+                <p class="tppname username">Member</p>
+            </label>
+            <input type="checkbox" name="topp" id="topp">
+            <label for="topp" class="toppcov"></label>
+            <div class="topprofile">
+                <div class="part">
+                    <i class="badge bi bi-star-fill member" id="userbadge"></i>
+                    <aside class="img">
+                        <img src="" alt="." class="userimage">
+                        <p class="imgfallback userinit">M</p>
+                    </aside>
+                    <p class="tpp username">Member</p>
+                </div>
+                <div class="div">
+                    <p>DETAILS</p>
+                    <ul>
+                        <li id="userid"></li>
+                        <li><span>Name</span><span id="userfullname">Member</span></li>
+                        <li><span>Email</span><span id="useremail">example@gmail.com</span></li>
+                        <li><span>Family</span><span id="userfamily">Member family</span></li>
+                        <li><span>Unit</span><span id="userunit">Member unit</span></li>
+                    </ul>
+                </div>
+                <div class="div">
+                    <p>ACTIONS</p>
+                    <ul>
+                        <li><a href="#" class="links" title="profile#badge"><i class="bi bi-star-fill"></i>View Badge</a></li>
+                        <li><a href="#" class="links" title="profile#profile"><i class="fas fa-user"></i>View Profile</a></li>
+                        <li><a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <!-- Members -->
+            <div class="content" id="members">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="dashboard#dashboard">Dashboard</a> >
+                    <a href="#members">Members</a>
+                </div>
+                <div class="main">
+                    <h4>Members</h4>
+                    <div class="biblepassage">
+                        <p>'For just as each of us has one body with many members… so in Christ we, though many, form one body.' <br/><i>-Romans 12:4-5 (NIV)</i></p>
+                        <p>'Now ye are the body of Christ, and members in particular.' <br/><i>-1 Corinthians 12:27 (KJV)</i></p>
+                        <p>'And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together…' <br/><i>-Hebrews 10:24-25 (NIV)</i></p>
+                    </div>
+
+                    <div class="overview">                     
+                        <a href="#" class="mybadge member links" title="profile#badge" id="overviewbadge">
+                            <i>Badge</i>
+                            <h3 id="overviewbadgeclass" class="bi bi-star-fill"></h3>
+                        </a>
+                        <div>
+                            <i>Birthdays</i>
+                            <h3><b class="bi bi-cake-fill"></b>&nbsp;&nbsp;<span id="overviewbirth">0</span></h3>
+                        </div>                                             
+                        <div>
+                            <i>Upcoming</i>
+                            <h3><b class="bi bi-cake2-fill"></b>&nbsp;&nbsp;<span id="overviewbirthUpComing">0</span></h3>
+                        </div>                                             
+                    </div>
+                    
+                    <div class="sec1">
+                        <div class="todaybirth">
+                            <b><i class="bi bi-cake-fill"></i>&nbsp;&nbsp;&nbsp;Today's Birthdays</b>
+                            <div class="info" id="birthtoday">
+                                <div class="noconcard">
+                                    <i class="nocon bi bi-ban"></i>
+                                    <i class="nocon">No contents.</i>
+                                </div>
+                                <!-- <div class="profilecard pc1">
+                                    <img src="" alt=".">
+                                    <p class="imgfallback"><span>P</span></p>
+                                    <i class="badge bi bi-trophy-fill devotee"></i>
+                                    <div>
+                                        <p class="first">
+                                            <b>Prime Spark</b>
+                                            <span><span>Rehoboth Family</span> • <span>Evangelism Unit</span></span>
+                                        </p>
+                                        <a href="#"><label for="profiledisplay">View</label></a>
+                                    </div>
+                                </div> -->
+                                
+                            </div>
+                        </div>
+
+                        <div class="weekbirth">
+                            <b><i class="bi bi-cake2-fill"></i>&nbsp;&nbsp;&nbsp;Upcoming Birthdays</b>
+                            <div class="info" id="birthUpcoming">
+                                <div class="noconcard">
+                                    <i class="nocon bi bi-ban"></i>
+                                    <i class="nocon">No contents.</i>
+                                </div>
+                                <!-- <div class="profilecard pc1">
+                                    <img src="" alt=".">
+                                    <p class="imgfallback"><span>P</span></p>
+                                    <i class="badge bi bi-trophy-fill devotee"></i>
+                                    <div>
+                                        <p class="first">
+                                            <b>Prime Spark</b>
+                                            <span><span>Rehoboth Family</span> • <span>Evangelism Unit</span></span>
+                                        </p>
+                                        <a href="#"><label for="profiledisplay">View</label></a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dmembers">
+                        <!-- Section One 1 -->
+                        <input type="checkbox" name="search" id="search">
+                        <div class="sec" id="dmemberscon">
+                            <input type="radio" name="filter" id="family" checked>
+                            <input type="radio" name="filter" id="unit">
+                            <input type="radio" name="filter" id="faculty">
+                            <div class="topnav">
+                                <b>Members</b>                                
+                                <label for="search" title="Search" class="bi bi-search"></label>
+                            </div>
+                            <div class="catfilter">
+                                <label for="family">My Family</label>
+                                <label for="unit">My Unit</label>
+                                <label for="faculty">My Faculty</label>
+                            </div>
+                            <section>
+                                <!-- Family -->                                
+                                <div class="family" >
+                                    <p class="total" id="familynum">My Family: 0</p>                                    
+                                    <div class="membercontainer" id="familycon">
+                                        <div class="noconcard">
+                                            <i class="nocon bi bi-ban"></i>
+                                            <i class="nocon">No contents.</i>
+                                        </div>
+                                        <!-- <div class="profilecard pc2">
+                                            <img src="" alt=".">
+                                            <p class="imgfallback"><span>M</span></p>
+                                            <i class="badge bi bi-star-fill member"></i>
+                                            <div>
+                                                <p class="first">
+                                                    <b>Member</b>
+                                                    <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                                </p>
+                                                <a href="#"><label for="profiledisplay">View</label></a>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Unit -->                                
+                                <div class="unit">
+                                    <p class="total" id="unitnum">My Unit: 0</p>                                    
+                                    <div class="membercontainer" id="unitcon">
+                                        <div class="noconcard">
+                                            <i class="nocon bi bi-ban"></i>
+                                            <i class="nocon">No contents.</i>
+                                        </div>
+                                        <!-- <div class="profilecard pc2">
+                                            <img src="" alt=".">
+                                            <p class="imgfallback"><span>M</span></p>
+                                            <i class="badge bi bi-star-fill member"></i>
+                                            <div>
+                                                <p class="first">
+                                                    <b>Member</b>
+                                                    <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                                </p>
+                                                <a href="#"><label for="profiledisplay">View</label></a>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <!-- Faculty -->                                
+                                <div class="faculty">
+                                    <p class="total" id="facultynum">My Faculty: 0</p>                                    
+                                    <div class="membercontainer" id="facultycon">
+                                        <div class="noconcard">
+                                            <i class="nocon bi bi-ban"></i>
+                                            <i class="nocon">No contents.</i>
+                                        </div>
+                                        <!-- <div class="profilecard pc2">
+                                            <img src="" alt=".">
+                                            <p class="imgfallback"><span>M</span></p>
+                                            <i class="badge bi bi-star-fill member"></i>
+                                            <div>
+                                                <p class="first">
+                                                    <b>Member</b>
+                                                    <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                                </p>
+                                                <a href="#"><label for="profiledisplay">View</label></a>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Section two 2 Search by Name -->
+                        <div class="sec sec2" id="searchcon">
+                            <div class="topnav">
+                                <label for="search" title="Back" class="bi bi-caret-left-fill"></label>
+                                <div>
+                                    <input type="search" name="dsearch" id="dsearch" title="Search" placeholder="Search all members...">
+                                    <button type="button" title="Search" class="bi bi-search" id="searchbtn"></button>
+                                </div>
+                            </div>
+                            <section>
+                                <p class="total">Result: <span id="searchnum">0</span></p>                                
+                                <div class="membercontainer searchtablecontainer" id="searchResultCon">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-ban"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="profilecard pc2">
+                                        <img src="" alt=".">
+                                        <p class="imgfallback"><span>M</span></p>
+                                        <i class="badge bi bi-star-fill member"></i>
+                                        <div>
+                                            <p class="first">
+                                                <b>Member</b>
+                                                <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                            </p>
+                                            <a href="#"><label for="profiledisplay">View</label></a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" name="profiledisplay" id="profiledisplay">
+            <label for="profiledisplay" class="usercon" title="."></label>
+            <div class="userdetails" id="userdetails">
+                <i class="badge bi bi-star-fill member"></i>
+                <aside class="img">
+                    <img src="" alt=".">
+                    <p class="imgfallback">M</p>
+                </aside>
+                <div class="dscroller">
+                    <div class="occupy"><i class="bi bi-caret-up-fill"></i></div>
+                    <ul>
+                        <li><b>Consistency</b> 
+                            <h1><i class="fas fa-sync"></i> <span>0%</span></h1>
+                        </li>
+                        <li><b>Name</b>  <span>Member</span></li>
+                        <li><b>Phone</b>  <span>08123456789</span></li>
+                        <li><b>D.O.B</b> <span>1st January</span></li>
+                        <li><b>Family</b> <span>Member family</span></li>
+                        <li><b>Unit</b> <span>Member unit</span></li>
+                        <li><b>Dept.</b> <span>Department</span></li>
+                    </ul>                
+                </div>
+            </div>
+            
+        </section>
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+
+    <script src="../../js/user.js"></script>
+    <script src="../../js/umembers.js"></script>
+</body>
+</html>
