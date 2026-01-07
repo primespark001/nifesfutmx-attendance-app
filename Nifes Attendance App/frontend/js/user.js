@@ -1,25 +1,24 @@
-// Get User
-async function getUser(){
-    const userId = window.location.pathname.split('/')[2];
-
-    try{
-        const res = await fetch(`/user/${userId}`, {method: "GET"});
-        const data = await res.json();        
-        if(res.ok) return data;
-    } catch (err){
-        if(err) return err;
+// Get Any User
+async function getUser(userID){
+    if(userID){
+        try{
+            const res = await fetch(`/user/${userID}`, {method: "GET"});
+            const data = await res.json();
+            if(res.ok) return data;
+        } catch (err){
+            if(err) return err;
+        }
+    } else{
+        const userId = window.location.pathname.split('/')[2];
+        try{
+            const res = await fetch(`/user/${userId}`, {method: "GET"});
+            const data = await res.json();        
+            if(res.ok) return data;
+        } catch (err){
+            if(err) return err;
+        }
     }
-}
 
-//  Get this user
-async function getThisUser(userID){
-    try{
-        const res = await fetch(`/user/${userID}`, {method: "GET"});
-        const data = await res.json();
-        if(res.ok) return data;
-    } catch (err){
-        if(err) return err;
-    }
 }
 
 // Alert Message
@@ -50,17 +49,7 @@ function mess(value, dmessage){
 
 
 // Theme
-function systemTheme(){
-    const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if(isDarkTheme){
-        document.body.classList.remove('light');
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-        document.body.classList.add('light');
-    }
-}
 async function setTheme(choice){
     const userid = document.getElementById('userid').innerHTML;
 
@@ -176,46 +165,6 @@ async function topprofile(user){
     userunit.innerHTML = `${user.unit} unit`;
 }
 
-// Get Today's Service
-async function todayService(userId){
-    const res = await fetch(`/user/${userId}/todayservice`, { method: 'GET'});
-    const data = await res.json();
-    if(res.ok) return data.service;
-    return false;
-}
-
-// Get all Services
-async function allServices(userId){
-    const res = await fetch(`/user/${userId}/services`, { method: 'GET'});
-    const data = await res.json();
-    if(res.ok) return data.services;
-    return false;
-}
-
-// Get all announcements
-async function allAnnouncements(userId){
-    const res = await fetch(`/user/${userId}/announcements`, { method: 'GET'});
-    const data = await res.json();
-    if(res.ok) return data.announce;
-    return false;
-}
-
-// Get today's birthdays
-async function todayBirthdays(userId){
-    const res = await fetch(`/user/${userId}/birthday2day`, { method: 'GET'});
-    const data = await res.json();
-    if(res.ok) return data.birth;
-    return false;
-}
-
-// Get upcoming birthdays
-async function upcomingBirthdays(userId){
-    const res = await fetch(`/user/${userId}/birthdayupcoming`, { method: 'GET'});
-    const data = await res.json();
-    if(res.ok) return data.birth;
-    return false;
-}
-
 // Overview
 async function overview(userID, badge, consist) {
     const ovBadge = document.getElementById('overviewbadge');
@@ -231,9 +180,18 @@ async function overview(userID, badge, consist) {
     ovConsist.innerHTML = `${consist}%`;
 
     try{
-        const announce = await allAnnouncements(userID);
-        const birth = await todayBirthdays(userID);
-        const service = await todayService(userID);
+        const resAnn = await fetch(`/user/${userId}/announcements`, { method: 'GET'});
+        const allAnnounce = await resAnn.json();
+
+        const resTodayBirth = await fetch(`/user/${userId}/birthday2day`, { method: 'GET'});
+        const tdBirth = await resTodayBirth.json();
+
+        const resTodayServ = await fetch(`/user/${userId}/todayservice`, { method: 'GET'});
+        const tdServ = await resTodayServ.json();
+
+        const announce = allAnnounce.announce;
+        const birth = tdBirth.birth;
+        const service = tdServ.service;
         
         ovAnnounce.innerHTML = announce.length;
         ovBirth.innerHTML = birth.length;
@@ -253,7 +211,9 @@ async function overview(userID, badge, consist) {
         }
         
         if (ovBirthUpComing) {        
-            const upcomingBirths = await upcomingBirthdays(userID);
+            const resBirth = await fetch(`/user/${userId}/birthdayupcoming`, { method: 'GET'});
+            const upcoming = await resBirth.json();
+            const upcomingBirths = await upcoming.birth;
             ovBirthUpComing.innerHTML = upcomingBirths.length;
         }
 
@@ -282,7 +242,7 @@ function profilecard(user, type){
 async function displayProfile(userID){
     const profileCon = document.getElementById('userdetails');
 
-    const data = await getThisUser(userID);
+    const data = await getUser(userID);
 
     const dob = data.user.dob.replace(/,\s\d{4}$/, '');
     const pbadge = badge(data.user.badge);
