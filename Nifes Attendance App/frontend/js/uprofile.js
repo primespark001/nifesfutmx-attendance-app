@@ -7,12 +7,12 @@ async function profile(){
     if(data){
         if(data.user.isLogin){
             links(data.user.id);
-            userTheme(data.user.theme); 
-            topprofile(data.user);
-            overview(data.user.id, data.user.badge, data.user.consistency);
-            profileSection(data.user);
-            editSection(data.user);
-            badgeSection(data.user.badge);
+            await userTheme(data.user.theme); 
+            await topprofile(data.user);
+            await overview(data.user.id, data.user.badge, data.user.consistency);
+            await profileSection(data.user);
+            await editSection(data.user);
+            await badgeSection(data.user.badge);
             loading.style.display = 'none';
         } else {
             mess(false, `Please Login!`);

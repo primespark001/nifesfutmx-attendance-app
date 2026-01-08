@@ -62,7 +62,7 @@ async function todayService(userID){
             servAction.innerHTML = `
                 <p class="servicestatus">
                     <span>Status</span>
-                    <b class="${service.status.toLowerCase()}">${service.status.toUpperCase()}</b>
+                    <b class="${service.status.toLowerCase()}" id="servicestatus">${service.status.toUpperCase()}</b>
                 </p>
                 <div class="checker">
                     <label for="checkin" onclick="markAttendance('${service.id}', '${userID}')" id="checkinlabel">
@@ -74,30 +74,46 @@ async function todayService(userID){
             `;
             
             checkInService(service, userID);
-            checkIn.innerHTML = `
-                <p class="attendstatus green"><i class="far fa-check-circle"></i> Attended</p>
-                ${checkservinfo(service)}
-            `;
+            
 
-            if(service.status === 'active'){
-                if(service.attendance.includes(userID)){
+            switch (service.status){
+                case 'active':
+                    if(service.attendance.includes(userID)){
+                        checkIn.innerHTML = `
+                            <p class="attendstatus green" style="display: flex;"><i class="far fa-check-circle"></i> Attended</p>
+                            ${checkservinfo(service)}
+                        `;
+                    } else {
+                        checkIn.innerHTML = `
+                            <p class="attendstatus green"><i class="far fa-check-circle"></i> Attended</p>
+                            ${checkservinfo(service)}
+                        `;
+                    }
+                    break;
+                case 'closed':           
+                    if(service.attendance.includes(userID)){
+                        checkIn.innerHTML = `
+                            <p class="attendstatus green" style="display: flex;"><i class="far fa-check-circle"></i> Attended</p>
+                            ${checkservinfo(service)}
+                        `;
+                    } else {
+                        checkIn.innerHTML = `
+                            <p class="attendstatus red" style="display: flex;"><i class="far fa-circle-xmark"></i> Missed</p>
+                            ${checkservinfo(service)} 
+                        `;
+                    }
+                    break;
+                case 'pending':
                     checkIn.innerHTML = `
-                        <p class="attendstatus green" style="display: flex;"><i class="far fa-check-circle"></i> Attended</p>
+                        <p class="attendstatus green"><i class="far fa-check-circle"></i> Attended</p>
                         ${checkservinfo(service)}
                     `;
-                }
-            } else if(service.status === 'closed'){
-                if(service.attendance.includes(userID)){
+                    break;
+                default: 
                     checkIn.innerHTML = `
-                        <p class="attendstatus green" style="display: flex;"><i class="far fa-check-circle"></i> Attended</p>
+                        <p class="attendstatus green"><i class="far fa-check-circle"></i> Attended</p>
                         ${checkservinfo(service)}
                     `;
-                } else {
-                    checkIn.innerHTML = `
-                        <p class="attendstatus red" style="display: flex;"><i class="far fa-circle-xmark"></i> Missed</p>
-                        ${checkservinfo(service)} 
-                    `;
-                }
             }
 
         } else {
@@ -179,7 +195,8 @@ async function services(userID, attended){
                     const servcard = attended.includes(allServ[i].id) ? servCard(allServ[i], 'attended') : servCard(allServ[i], 'missed');
                     allCon.append(servcard);
                 } else if(allServ[i].status === 'active'){
-                    continue;
+                    const servcard = attended.includes(allServ[i].id) ? servCard(allServ[i], 'attended') : servCard(allServ[i], 'pending');
+                    allCon.append(servcard);
                 } else {
                     const servcard = servCard(allServ[i], 'pending');
                     allCon.append(servcard);
@@ -232,7 +249,8 @@ async function searchServ(userID, attended){
                         const servcard = attended.includes(services[i].id) ? servCard(services[i], 'attended') : servCard(services[i], 'missed');
                         resultCon.append(servcard);
                     } else if(services[i].status === 'active'){
-                        continue;
+                        const servcard = attended.includes(services[i].id) ? servCard(services[i], 'attended') : servCard(services[i], 'pending');
+                        resultCon.append(servcard);
                     } else {
                         const servcard = servCard(allServ[i], 'pending');
                         resultCon.append(servcard);

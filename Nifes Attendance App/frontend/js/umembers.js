@@ -7,11 +7,11 @@ async function members(){
     if(data){
         if(data.user.isLogin){
             links(data.user.id);
-            userTheme(data.user.theme); 
-            topprofile(data.user);
-            overview(data.user.id, data.user.badge, data.user.consistency);
-            birthdays(data.user.id);            
-            membersSection(data.user.id, data.user.family, data.user.unit);
+            await userTheme(data.user.theme); 
+            await topprofile(data.user);
+            await overview(data.user.id, data.user.badge, data.user.consistency);
+            await birthdays(data.user.id);            
+            await membersSection(data.user.id, data.user.family, data.user.unit);
             loading.style.display = 'none';
         } else {
             mess(false, `Please Login!`);
