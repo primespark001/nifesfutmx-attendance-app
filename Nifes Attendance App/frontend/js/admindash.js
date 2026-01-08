@@ -41,7 +41,7 @@ async function todayService(adminID){
         const members = await fetch(`/admin/${adminID}/members`, {method: "GET"});
 
 
-        if(res.ok){
+        if(res.ok && members.ok){
             const attendNum = service.attendance.length;
             const membersNum = members.members.length;
             const rate = Math.round(((attendNum / membersNum) * 100) * 100) / 100;

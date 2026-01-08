@@ -28,19 +28,17 @@ export async function calculateUser(userId) {
 }
 
 function calcBadge(att, consist, ubadge, unit){
-    let dbadge;
-
-    if(ubadge === 'acsteward' && att >= 18 && consist >= 75){
-        dbadge = 'devotee';
+    if(ubadge === 'devotee'){
+        return 'devotee';
+    else if(ubadge === 'acsteward' && att >= 18 && consist >= 75){
+        return 'devotee';
     } else if(ubadge === 'steward' && att >= 15 && consist >= 75){
-        dbadge = 'acsteward';
+        return 'acsteward';
     } else if(unit !== 'None' && att >= 9 && consist >= 50){
-        dbadge = 'steward';
+        return 'steward';
     } else if(ubadge === 'member' && att >= 6 && consist >= 50){
-        dbadge = 'acmember';
+        return 'acmember';
     } else {
-        dbadge = 'member';
+        return 'member';
     }
-    
-    return dbadge;
 } 
