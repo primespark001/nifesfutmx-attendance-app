@@ -56,14 +56,14 @@ async function services(adminID){
     const allCon = document.getElementById('allcon');
     const sunNum = document.getElementById('sunnum');
     const sunCon = document.getElementById('suncon');
-    const teuNum = document.getElementById('teunum');
-    const teuCon = document.getElementById('teucon');
+    const tueNum = document.getElementById('tuenum');
+    const tueCon = document.getElementById('tuecon');
     const thurNum = document.getElementById('thurnum');
     const thurCon = document.getElementById('thurcon');
 
     allCon.innerHTML = loading();
     sunCon.innerHTML = loading();
-    teuCon.innerHTML = loading();
+    tueCon.innerHTML = loading();
     thurCon.innerHTML = loading();
 
     const searchBtn = document.getElementById('searchbtn');
@@ -76,49 +76,99 @@ async function services(adminID){
 
         if(res.ok){
             const allServ = data.services;
+            const sunServ = allServ.filter(serv => serv.date.toLowerCase().includes('sun'));
+            const tueServ = allServ.filter(serv => serv.date.toLowerCase().includes('tue'));
+            const thurServ = allServ.filter(serv => serv.date.toLowerCase().includes('thu'));
 
             allCon.innerHTML = '';
             sunCon.innerHTML = '';
-            teuCon.innerHTML = '';
+            tueCon.innerHTML = '';
             thurCon.innerHTML ='';
-
-            // from here
-            allNum.innerHTML = allServ.length;
-            attNum.innerHTML = attended.length;
-
-            const missed = allServ.length - attended.length;
-            missNum.innerHTML = missed;
             
-            if(attended.length == 0) attCon.innerHTML = noContent();
-            if(missed == 0) missCon.innerHTML = noContent();
+            allNum.innerHTML = allServ.length;
+            sunNum.innerHTML = sunServ.length;
+            tueNum.innerHTML = tueServ.length;
+            thurNum.innerHTML = thurServ.length;
+            
+            if(allServ.length == 0) allCon.innerHTML = noContent();
+            if(sunServ.length == 0) sunCon.innerHTML = noContent();
+            if(tueServ.length == 0) tueCon.innerHTML = noContent();
+            if(thurServ.length == 0) thurCon.innerHTML = noContent();
 
-            for(i=0; i<allServ.length, i++;){
-                if(allServ[i].status === 'closed'){
-                    const servcard = attended.includes(allServ[i].id) ? servCard(allServ[i], 'attended') : servCard(allServ[i], 'missed');
-                    allCon.append(servcard);
-                } else if(allServ[i].status === 'active'){
-                    const servcard = attended.includes(allServ[i].id) ? servCard(allServ[i], 'attended') : servCard(allServ[i], 'pending');
-                    allCon.append(servcard);
-                } else {
-                    const servcard = servCard(allServ[i], 'pending');
-                    allCon.append(servcard);
-                }
+            allServ.forEach(serv => {
+                const servcard = servCard(serv);
+                allCon.append(servcard);
+            });
+            sunServ.forEach(serv => {
+                const servcard = servCard(serv);
+                sunCon.append(servcard);
+            });
+            tueServ.forEach(serv => {
+                const servcard = servCard(serv);
+                tueCon.append(servcard);
+            });
+            thurServ.forEach(serv => {
+                const servcard = servCard(serv);
+                thurCon.append(servcard);
+            });            
 
-                if(attended.includes(allServ[i].id)){
-                    const att = servCard(allServ[i], 'attended');
-                    attCon.append(att);
-                } else {
-                    const miss = servCard(allServ[i], 'missed');
-                    missCon.append(miss);
-                }
-            }
         } else {
             allCon.innerHTML = noContent();
-            attCon.innerHTML = noContent();
-            missCon.innerHTML = noContent();
+            sunCon.innerHTML = noContent();
+            tueCon.innerHTML = noContent();
+            thurCon.innerHTML = noContent();
         }
 
     } catch (err){
         if(err) throw new Error(err);
+    }
+}
+
+function servCard(service){
+    return `
+        <div class="tabledata">
+            <div>
+                <img src="${service.img}" alt=".">
+                <p>${service.title}</p>
+            </div>
+            <b>${service.date}</b>
+            <b>${service.time}</b>
+            <b>${service.attendance.length}</b>
+            <b class="tdstatus ${service.status.toLowerCase()}">${service.status.toUpperCase()}</b>
+        </div>
+    `;
+}
+
+async function searchServ(adminID){
+    const searchInput = document.getElementById('dsearch').value.trim();
+    const searchCon = document.getElementById('searchcon');
+    const searchNum = document.getElementById('searchnum');
+
+    searchCon.innerHTML = loading();
+
+    if(!searchInput){
+        searchCon.innerHTML = noContent();
+    } else {
+        try {
+            const res = await fetch(`/admin/${adminID}/service?title=${searchInput}`, { method: 'GET'});
+            const data = await res.json();
+
+            if(res.ok){
+                const services = data.services;
+                searchNum.innerHTML = services.length;
+
+                searchCon.innerHTML = '';
+                services.forEach(serv => {
+                    const servcard = servCard(serv);
+                    searchCon.append(servcard);
+                });
+            } else{
+                searchNum.innerHTML = '0';
+                searchCon.innerHTML = noContent;
+            }
+
+        } catch (err) {
+            if (err) throw new Error(err);
+        }
     }
 }

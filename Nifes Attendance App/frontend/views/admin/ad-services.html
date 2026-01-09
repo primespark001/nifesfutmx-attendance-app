@@ -123,7 +123,7 @@
                             <section>
                                 <!-- All -->                                
                                 <div class="all">
-                                    <p class="total" >Total: 0</p>
+                                    <p class="total">Total: <span id="allnum">0</span></p>
                                     <ul class="tableheader">
                                         <li>Title</li>
                                         <li>Date</li>
@@ -131,7 +131,7 @@
                                         <li>Attendance</li>
                                         <li>Status</li>
                                     </ul>
-                                    <div class="tablecontainer">
+                                    <div class="tablecontainer" id="allcon">
                                         <div class="noconcard">
                                             <i class="nocon bi bi-file-earmark-x"></i>
                                             <i class="nocon">No contents.</i>
@@ -151,7 +151,7 @@
                                 
                                 <!-- Sunday -->                                
                                 <div class="sunday">
-                                    <p class="total">Sunday: 0</p>
+                                    <p class="total">Sunday: <span id="sunnum">0</span></p>
                                     <ul class="tableheader">
                                         <li>Title</li>
                                         <li>Date</li>
@@ -159,7 +159,7 @@
                                         <li>Attendance</li>
                                         <li>Status</li>
                                     </ul>
-                                    <div class="tablecontainer">
+                                    <div class="tablecontainer" id="suncon">
                                         <div class="noconcard">
                                             <i class="nocon bi bi-bell-slash-fill"></i>
                                             <i class="nocon">No contents.</i>
@@ -179,7 +179,7 @@
     
                                 <!-- Tuesday -->                                
                                 <div class="tuesday">
-                                    <p class="total">Tuesday: 0</p>
+                                    <p class="total">Tuesday: <span id="tuenum">0</span></p>
                                     <ul class="tableheader">
                                         <li>Title</li>
                                         <li>Date</li>
@@ -187,7 +187,7 @@
                                         <li>Attendance</li>
                                         <li>Status</li>
                                     </ul>
-                                    <div class="tablecontainer">
+                                    <div class="tablecontainer" id=""tuecon>
                                         <div class="noconcard">
                                             <i class="nocon bi bi-bell-slash-fill"></i>
                                             <i class="nocon">No contents.</i>
@@ -207,7 +207,7 @@
 
                                 <!-- Thursday -->                                
                                 <div class="thursday">
-                                    <p class="total">Thursday: 0</p>
+                                    <p class="total">Thursday: <span id="thurnum">0</span></p>
                                    <ul class="tableheader">
                                         <li>Title</li>
                                         <li>Date</li>
@@ -215,7 +215,7 @@
                                         <li>Attendance</li>
                                         <li>Status</li>
                                     </ul>
-                                    <div class="tablecontainer">
+                                    <div class="tablecontainer" id="thurcon">
                                         <div class="noconcard">
                                             <i class="nocon bi bi-bell-slash-fill"></i>
                                             <i class="nocon">No contents.</i>
@@ -241,11 +241,11 @@
                                 <label for="search" title="Back" class="bi bi-caret-left-fill"></label>
                                 <div>
                                     <input type="search" name="dsearch" id="dsearch" title="Search" placeholder="Search by title...">
-                                    <button type="button" title="Search" class="bi bi-search"></button>
+                                    <button type="button" title="Search" class="bi bi-search" id="searchbtn"></button>
                                 </div>
                             </div>
                             <section>
-                                <p class="total">Result: 0</p>        
+                                <p class="total">Result: <span id="searchnum">0</span></p>        
                                 <ul class="tableheader">
                                     <li>Title</li>
                                     <li>Date</li>
@@ -253,7 +253,7 @@
                                     <li>Attendance</li>
                                     <li>Status</li>
                                 </ul>
-                                <div class="tablecontainer">
+                                <div class="tablecontainer" id="searchcon">
                                     <div class="noconcard">
                                         <i class="nocon bi bi-bell-slash-fill"></i>
                                         <i class="nocon">No contents.</i>
