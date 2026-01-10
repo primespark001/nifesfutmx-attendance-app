@@ -57,7 +57,7 @@ async function todayService(adminID){
                         <p><b>Status</b> <span class="${service.status.toLowerCase()}">${service.status.toUpperCase()}</span></p>
                     </div>                        
                 </div>
-                <a href="/admin/${adminID}/ad-services?servId=${service.id}#details" class="alast">Details</a>
+                <a href="/admin/${adminID}/ad-services/details?servId=${service.id}" class="alast">Details</a>
             `;
         } else {
             servCon.innerHTML = noContent();
@@ -88,7 +88,7 @@ async function services(adminID){
                                 <li><b>Title</b><span>${service.title}</span></li>
                                 <li><b>Date</b><span>${service.date}</span></li>
                             </ul>
-                            <a href="/admin/${adminID}/ad-services?servId=${service.id}#details">Details</a>
+                            <a href="/admin/${adminID}/ad-services/details?servId=${service.id}">Details</a>
                         </div>
                     `);
                 }

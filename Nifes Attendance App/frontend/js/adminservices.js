@@ -10,7 +10,6 @@ async function adminServices(){
             await overview(data.admin.admin_id);
             await todayService(data.admin.admin_id);
             await services(data.admin.admin_id);
-            await servDetSec(data.admin.admin_id);
             loading.style.display = 'none';
         } else {
             mess(false, `Please Login!`);
@@ -40,7 +39,7 @@ async function todayService(adminID){
         const service = data.service;
 
         if(res.ok){
-            servConLink.href = `/admin/${adminID}/ad-services?servID=${service.id}#details`;
+            servConLink.href = `/admin/${adminID}/ad-services/details?servID=${service.id}`;
             servCon.innerHTML = `<img src="${service.img}" alt="Service">`;
         } else {
             servConLink.disabled = true;
@@ -76,9 +75,9 @@ async function services(adminID){
 
         if(res.ok){
             const allServ = data.services;
-            const sunServ = allServ.filter(serv => serv.date.toLowerCase().includes('sun'));
-            const tueServ = allServ.filter(serv => serv.date.toLowerCase().includes('tue'));
-            const thurServ = allServ.filter(serv => serv.date.toLowerCase().includes('thu'));
+            const sunServ = allServ.filter(serv => serv.date.includes('Sun'));
+            const tueServ = allServ.filter(serv => serv.date.includes('Tue'));
+            const thurServ = allServ.filter(serv => serv.date.includes('Thu'));
 
             allCon.innerHTML = '';
             sunCon.innerHTML = '';
@@ -126,7 +125,7 @@ async function services(adminID){
 
 function servCard(service){
     return `
-        <div class="tabledata">
+        <div class="tabledata" onclick='gotoServDetails(${service.id})'>
             <div>
                 <img src="${service.img}" alt=".">
                 <p>${service.title}</p>
@@ -171,4 +170,91 @@ async function searchServ(adminID){
             if (err) throw new Error(err);
         }
     }
+}
+
+async function gotoServDetails(servID){
+    const loading = document.getElementById("loading");
+    loading.style.display = 'flex';
+
+    const adminID = document.getElementById('admin-id').innerHTML;
+    const res = await fetch(`/admin/${adminID}/ad-services/details?servID=${servID}`, {method: 'GET'});
+    if(res.ok){
+        loading.style.display = 'none';
+        window.location = res.url;
+    } else {
+        mess(false, 'An error occured. Please try again.');
+        loading.style.display = 'none';
+    }
+}
+
+const imgInput = document.getElementById('editimg');
+imgInput.onchange = (event) => {
+    const edImg = document.getElementById('servimg');
+    edImg.src = URL.createObjectURL(event.target.files[0]);
+};
+
+async function createService(){
+    const loading = document.getElementById("loading");
+    loading.style.display = 'flex';
+
+    const adminID = document.getElementById('admin-id').innerHTML;
+
+    // These two are confusing me     
+    const imgInput = document.getElementById('editimg');
+
+    const servTitle = document.getElementById('title').value.trim();
+    const servDate = document.getElementById('date').value.trim();
+    const servTime = document.getElementById('time').value.trim();
+    const servDesc = document.getElementById('desc').value.trim();
+    const servStartTime = document.getElementById('start').value;
+    const servStopTime = document.getElementById('stop').value;
+
+    if(servTitle&&servDate&&servTime&&servDesc&&servStartTime&&servStopTime){
+        const date = new Date(servDate).toLocaleDateString('en-NG', {
+            weekday: 'short',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+
+        let [hours, minutes] = servTime.split(':').map(Number);
+        const meridian = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
+
+        const time = `${hours}:${String(minutes).padStart(2, '0')} ${meridian}`;
+        const servid = Date.now();
+
+        try{
+            const res = await fetch(`/admin/${adminID}/create-service`, {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    id: servid,
+                    title: servTitle,
+                    date: date,
+                    time: time,
+                    imgFile: imgInput.files[0],
+                    descrip: servDesc,
+                    start: servStartTime,
+                    stop: servStopTime,    
+                })
+            });
+            const data = await res.json();
+            if(res.ok){
+                mess(true, data.message);
+                setTimeout(() => {
+                    adminServices();
+                    loading.style.display = 'none';
+                }, 4000);
+            }
+
+        } catch (error){
+            if(error) throw new Error(error)
+        }
+
+    } else {
+        mess(false, 'Please complete the form!')
+        loading.style.display = 'none';
+    }
+
 }

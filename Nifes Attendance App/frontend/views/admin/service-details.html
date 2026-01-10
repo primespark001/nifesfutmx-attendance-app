@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad-Services | NIFES FUTMX</title>
+    <link rel="shortcut icon" href="../../resources/NIFES LOGO PNG.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="../../css/admingeneral.css">
+    <link rel="stylesheet" href="../../css/admin-services.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="../../resources/nifeslogo.png" alt="Nifes Logo">
+            <img src="../../resources/futmxlogo.png" alt="FUT Minna Logo">
+            <b>NIFES FUTMX</b>
+        </div>
+        <label for="navmenu" title="Menu" class="fas fa-bars label"></label>
+        <input type="checkbox" id="navmenu">
+        <label for="navmenu" class="cover"></label>
+        <div class="menu">
+            <label for="navmenu" title="Menu" class="fas fa-x label"></label>
+            <a href="#" class="links" title="ad-dashboard"><i class="bi bi-grid-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="links activenav" title="ad-services"><i class="bi bi-bar-chart-line-fill"></i><span>Services</span></a>
+            <a href="#" class="links" title="ad-announcements"><i class="bi bi-megaphone-fill"></i><span>Announcements</span></a>
+            <a href="#" class="links" title="ad-members"><i class="bi bi-people-fill"></i><span>Members</span></a>            
+            <div class="quickactions">
+                <a href="#" onclick="logout()"><i class="fas fa-sign-out"></i>Log out</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="top">
+            <h3>Services</h3>
+            <p id="admin-id"></p>
+        </div>
+        <section class="section">
+            <!-- Details -->
+            <div class="content" id="details">
+                <div class="breadcrumb">
+                    <a href="#" class="links" title="ad-dashboard">Dashboard</a> >
+                    <a href="#" class="links" title="ad-services">Services</a> >
+                    <a href="#">Details</a>
+                </div>
+                <div class="main">
+                    <h4><a href="#" title="ad-services" class="links back fas fa-caret-left"></a> Details</h4>
+
+                    <div class="dactions">
+                        <label for="editserv"><i class="fas fa-pen"></i>&nbsp;&nbsp;Edit Service</label>
+                        <a href="#"><i class="bi bi-ban"></i>&nbsp;&nbsp;Close Service</a>
+                        <label for="delserv"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Service</label>
+                    </div>
+
+                    <div class="space">
+                        <div class="dservice">
+                            <a href="#" title="Service"><img src="../../resources/celeserviceblue.jpg" alt="Service"></a>
+                            <div>
+                                <p><b>Title</b>  <span>Celebration Service</span></p>
+                                <p><b>Date</b> <span>Sun. 2nd March 2025</span></p>
+                                <p><b>Time</b> <span>2:30PM</span></p>
+                                <p><b>Attendance</b> <span>200/250</span></p>
+                                <p><b>Rate</b> <span>80%</span></p>
+                                <p><b>Status</b> <span class="active">ACTIVE</span></p>
+                            </div>
+                            <div>
+                                <p><b>Description</b> 
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta accusantium delectus deleniti. Quisquam in rerum quidem dolorem, itaque totam! Reprehenderit dignissimos deserunt, sint dolores autem eaque ipsa optio incidunt animi.</span>
+                                </p>
+                            </div>                       
+                        </div>
+    
+                        <div class="attendrate">
+                            <b><i class="bi bi-bar-chart-fill"></i>&nbsp;&nbsp;Attendance Chart</b>
+                            <div class="container">
+                                <ul class="cali">
+                                    <li>100%</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>50%</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>-</li>
+                                    <li>0%</li>
+                                </ul>
+                                <div class="barchart">
+                                    <div class="bar"></div>
+                                    <p class="barvalue">0%</p>
+                                </div>
+                            </div>
+                            <!-- <div class="chartdetails">
+                                <p><b>Attendance</b><span>200/250</span></p>
+                                <p><b>Rate</b><span>80%</span></p>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="dmembers">
+                        <!-- Section One 1 -->
+                        <input type="checkbox" name="dmembersearch" id="dmembersearch">
+                        <div class="sec" id="dmemberscon">
+                            <div class="topnav">
+                                <b>Members</b>                                
+                                <label for="dmembersearch" title="Search" class="bi bi-search"></label>
+                            </div>
+
+                            <!-- Members -->
+                            <section>
+                                <p class="total">Total: 0</p>                                    
+                                <div class="membercontainer">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-bell-slash-fill"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="profilecard pc2">
+                                        <img src="" alt=".">
+                                        <p class="imgfallback"><span>M</span></p>
+                                        <i class="badge bi bi-star-fill member"></i>
+                                        <div>
+                                            <p class="first">
+                                                <b>Member</b>
+                                                <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                            </p>
+                                            <a href="#"><label for="profiledisplay">View</label></a>
+                                        </div>
+                                    </div> --> 
+                                </div>  
+                            </section>
+                        </div>
+
+                        <!-- Section two 2 Search by Name -->
+                        <div class="sec sec2" id="dmembersearchcon">
+                            <div class="topnav">
+                                <label for="dmembersearch" title="Back" class="bi bi-caret-left-fill"></label>
+                                <div>
+                                    <input type="search" name="dmsearch" id="dmsearch" title="Search" placeholder="Search by name...">
+                                    <button type="button" title="Search" class="bi bi-search"></button>
+                                </div>
+                            </div>
+                            <section>
+                                <p class="total">Result: 0</p>                                
+                                <div class="membercontainer searchtablecontainer">
+                                    <div class="noconcard">
+                                        <i class="nocon bi bi-bell-slash-fill"></i>
+                                        <i class="nocon">No contents.</i>
+                                    </div>
+                                    <!-- <div class="profilecard pc2">
+                                        <img src="" alt=".">
+                                        <p class="imgfallback"><span>M</span></p>
+                                        <i class="badge bi bi-star-fill member"></i>
+                                        <div>
+                                            <p class="first">
+                                                <b>Member</b>
+                                                <span><span>Member Family</span> • <span>Member Unit</span></span>
+                                            </p>
+                                            <a href="#"><label for="profiledisplay">View</label></a>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+
+                    <!-- Delete Service -->
+                    <input type="checkbox" name="delserv" id="delserv" class="delinput">
+                    <div class="delcov"></div>
+                    <div class="delcon">
+                        <i class="bi bi-calendar-day-fill"></i>
+                        <h3>Delete Service</h3>
+                        <p>
+                            All information about this service will be deleted.
+                            Including attendance records and members that attended.<br>
+                            <b>THIS CANNOT BE UNDONE!!!</b>
+                        </p>
+                        <div>
+                            <a href="#">Delete</a>
+                            <label for="delserv">Cancel</label>
+                        </div>
+                    </div>
+                    
+                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
+                        Building tomorrow's leaders today...
+                    </div>
+
+                </div>
+            </div>         
+
+        </section>
+
+        <!-- Edit service -->
+        <input type="checkbox" name="editserv" id="editserv">
+        <div class="editcov"></div>
+        <div class="editcon">
+            <h3><i class="fas fa-pen"></i><span>Edit Service</span>
+                <label for="editserv" class="fas fa-x"></label>
+            </h3>
+            <form action="" method="post">
+                <div class="dimg">
+                    <img src="" alt="">
+                    <label for="editimg"><i class="bi bi-camera"></i><span>Add Image</span></label>
+                    <input type="file" name="editimg" id="editimg" accept="image/jpeg, image/png" title="profile" required>
+                </div>
+                <ul>
+                    <li>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" placeholder="e.g. Celebration Service" required>
+                    </li>
+                    <li>
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date" required>
+                    </li>
+                    <li>
+                        <label for="time">Time</label>
+                        <input type="time" name="time" id="time" required>
+                    </li>
+                    <li>
+                        <label for="desc">Description</label>
+                        <textarea name="desc" id="desc"></textarea>
+                    </li>
+                </ul>              
+
+
+                <div class="btns">
+                    <div>
+                        <p>ACTIVE TIME</p>
+                        <p>
+                            <label for="start">Start Time</label>
+                            <input type="time" name="start" id="start" required>
+                        </p>
+                        <p>
+                            <label for="duration">Duration</label>
+                            <input type="number" name="duration" id="duration" min="1" max="60" value="1" required>
+                            <select name="" id="duration" required>
+                                <option value="hour">hr</option>
+                                <option value="minute">m</option>
+                                <option value="seconds">s</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button type="submit"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="loading" id="loading">
+            <img src="../../resources/nifeslogo.png" alt="nifeslogo">
+            <div class="rotor"></div>
+        </div>
+        <p class="mess" id="mess">
+            <i class="fas fa-circle-check"></i>
+            <span>Registration Successful</span>
+        </p>
+    </main>
+
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/servdetails.js"></script>
+</body>
+</html>

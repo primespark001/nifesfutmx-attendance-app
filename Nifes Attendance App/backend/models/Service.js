@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const serviceSchema = new mongoose.Schema({
   id: { type: String, unique: true, required: true },
   title: { type: String, required: true },
-  date: { type: String, unique: true, required: true },
+  date: { type: String, required: true },
   time: { type: String, required: true },
   img: { type: String, required: true },
   descrip: { type: String, required: true },

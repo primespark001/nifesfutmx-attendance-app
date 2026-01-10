@@ -111,39 +111,8 @@ function profilecard(adminID, user, type){
                     <b>${user.surname} ${user.firstname} ${user.othername}</b>
                     <span><span>${user.family}</span> • <span>${user.unit}</span></span>
                 </p>
-                <a href="/admin/${adminID}/ad-members?userID=${user.id}#details">View</a>
+                <a href="/admin/${adminID}/ad-members/details?userID=${user.id}">View</a>
             </div>
-        </div>
-    `;
-}
-
-async function displayProfile(userID){
-    const profileCon = document.getElementById('userdetails');
-
-    const data = await getUser();
-
-    const dob = data.user.dob.replace(/,\s\d{4}$/, '');
-    const pbadge = badge(data.user.badge);
-    
-    profileCon.innerHTML = `
-        <i class="badge ${pbadge} ${data.user.badge}"></i>
-        <aside class="img">
-            <img src="${data.user.profileImgUrl}" alt=".">
-            <p class="imgfallback">${user.firstname.charAt(0).toUpperCase()}</p>
-        </aside>
-        <div class="dscroller">
-            <div class="occupy"><i class="bi bi-caret-up-fill"></i></div>
-            <ul>
-                <li><b>Consistency</b> 
-                    <h1><i class="fas fa-sync"></i> <span>${data.user.consistency}%</span></h1>
-                </li>
-                <li><b>Name</b>  <span>${data.user.surname} ${data.user.firstname} ${data.user.othername}</span></li>
-                <li><b>Phone</b>  <span>${data.user.phone}</span></li>
-                <li><b>D.O.B</b> <span>${dob}</span></li>
-                <li><b>Family</b> <span>${data.user.family} family</span></li>
-                <li><b>Unit</b> <span>${data.user.unit} unit</span></li>
-                <li><b>Dept.</b> <span>${data.user.dept}</span></li>
-            </ul>                
         </div>
     `;
 }

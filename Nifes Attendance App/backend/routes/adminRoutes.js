@@ -19,11 +19,17 @@ adminRoute.get(`/:id/ad-dashboard`, (req, res) => {
 adminRoute.get(`/:id/ad-services`, (req, res) => {
     res.sendFile(path.join(frontendPath, 'views', 'admin', 'ad-services.html'));
 });
-adminRoute.get(`/:id/announcements`, (req, res) => {
+adminRoute.get(`/:id/ad-announcements`, (req, res) => {
     res.sendFile(path.join(frontendPath, 'views', 'admin', 'ad-announcements.html'));
 });
-adminRoute.get(`/:id/members`, (req, res) => {
+adminRoute.get(`/:id/ad-members`, (req, res) => {
     res.sendFile(path.join(frontendPath, 'views', 'admin', 'ad-members.html'));
+});
+adminRoute.get(`/:id/ad-service/details`, (req, res) => {
+    res.sendFile(path.join(frontendPath, 'views', 'admin', 'service-details.html'));
+});
+adminRoute.get(`/:id/ad-members/details`, (req, res) => {
+    res.sendFile(path.join(frontendPath, 'views', 'admin', 'member-details.html'));
 });
 
 // Get Admin
