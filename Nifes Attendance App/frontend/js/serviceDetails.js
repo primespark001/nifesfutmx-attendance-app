@@ -36,7 +36,7 @@ async function servDetails(adminID){
 
     const delBtn = document.getElementById('delbtn');
     delBtn.onclick = deleteService(adminID, serviceID);
-    
+
     try{
         
         const res = await fetch(`/admin/${adminID}/service?servID=${serviceID}`, {method: 'GET'});
@@ -90,13 +90,13 @@ function serviceChart(rate){
     barvalue.textContent = `${rate}%`;
 }
 
-async servMembers(adminID, membersIds){
+async function servMembers(adminID, membersIds){
     const totalNum = document.getElementById('totalnum');
     const totalCon = document.getElementById('totalcon');
     const searchBtn = document.getElementById('searchattendmembers');
     
     let members = [];
-    totalNum..innerHTML = membersIds.length;
+    totalNum.innerHTML = membersIds.length;
     membersIds.forEach(userID => {
         try{
             const res = await fetch(`/admin/${adminID}/member/${userID}`, {method: 'GET'});
@@ -131,7 +131,7 @@ function searchAttMem(adminID, memebrs){
             user.surname.includes(name) ||
             user.firstname.includes(name) ||
             user.othername.includes(name)
-        });
+        );
         if(result){
             result.forEach(user => {
                 const profile = profilecard(adminID, user, 'pc2')
@@ -161,7 +161,7 @@ async function deleteService(adminId, servId) {
                 servID: servId
             })
         });
-        const data = awair res.json();
+        const data = await res.json();
         if(res.ok){
             mess(true, data.message);
             loading.style.display = 'none';
