@@ -51,8 +51,6 @@
                     <h4><a href="#" title="ad-services" class="links back fas fa-caret-left"></a> Details</h4>
 
                     <div class="dactions">
-                        <label for="editserv"><i class="fas fa-pen"></i>&nbsp;&nbsp;Edit Service</label>
-                        <a href="#"><i class="bi bi-ban"></i>&nbsp;&nbsp;Close Service</a>
                         <label for="delserv"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete Service</label>
                     </div>
 
@@ -178,7 +176,7 @@
                             <b>THIS CANNOT BE UNDONE!!!</b>
                         </p>
                         <div>
-                            <a href="#">Delete</a>
+                            <a href="#" id="delbtn">Delete</a>
                             <label for="delserv">Cancel</label>
                         </div>
                     </div>
@@ -192,60 +190,6 @@
 
         </section>
 
-        <!-- Edit service -->
-        <input type="checkbox" name="editserv" id="editserv">
-        <div class="editcov"></div>
-        <div class="editcon">
-            <h3><i class="fas fa-pen"></i><span>Edit Service</span>
-                <label for="editserv" class="fas fa-x"></label>
-            </h3>
-            <form action="" method="post">
-                <div class="dimg">
-                    <img src="" alt="">
-                    <label for="editimg"><i class="bi bi-camera"></i><span>Add Image</span></label>
-                    <input type="file" name="editimg" id="editimg" accept="image/jpeg, image/png" title="profile" required>
-                </div>
-                <ul>
-                    <li>
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" placeholder="e.g. Celebration Service" required>
-                    </li>
-                    <li>
-                        <label for="date">Date</label>
-                        <input type="date" name="date" id="date" required>
-                    </li>
-                    <li>
-                        <label for="time">Time</label>
-                        <input type="time" name="time" id="time" required>
-                    </li>
-                    <li>
-                        <label for="desc">Description</label>
-                        <textarea name="desc" id="desc"></textarea>
-                    </li>
-                </ul>              
-
-
-                <div class="btns">
-                    <div>
-                        <p>ACTIVE TIME</p>
-                        <p>
-                            <label for="start">Start Time</label>
-                            <input type="time" name="start" id="start" required>
-                        </p>
-                        <p>
-                            <label for="duration">Duration</label>
-                            <input type="number" name="duration" id="duration" min="1" max="60" value="1" required>
-                            <select name="" id="duration" required>
-                                <option value="hour">hr</option>
-                                <option value="minute">m</option>
-                                <option value="seconds">s</option>
-                            </select>
-                        </p>
-                    </div>
-                    <button type="submit"><i class="fas fa-save"></i>&nbsp;&nbsp;Save Changes</button>
-                </div>
-            </form>
-        </div>
 
         <div class="loading" id="loading">
             <img src="../../resources/nifeslogo.png" alt="nifeslogo">

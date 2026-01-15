@@ -33,6 +33,10 @@ async function servDetails(adminID){
     
     const serviceCon = document.getElementById('dservice');
     serviceCon.innerHTML = loading();
+
+    const delBtn = document.getElementById('delbtn');
+    delBtn.onclick = deleteService(adminID, serviceID);
+    
     try{
         
         const res = await fetch(`/admin/${adminID}/service?servID=${serviceID}`, {method: 'GET'});
@@ -113,7 +117,7 @@ async servMembers(adminID, membersIds){
 
 }
 
-funtion searchAttMem(adminID, memebrs){
+function searchAttMem(adminID, memebrs){
     const input = document.getElementById('dmsearch');
     const resultNum = document.getElementById('resultnum');
     const resultCon = document.getElementById('resultcon');
@@ -141,9 +145,32 @@ funtion searchAttMem(adminID, memebrs){
     } else {
         mess(false, "Enter member's name");
         resultCon.innerHTML = noContent();
+    }    
+}
+
+async function deleteService(adminId, servId) {
+    const loading = document.getElementById("loading");
+    loading.style.display = 'flex';    
+
+    try {
+        const res = await fetch(`/admin/${adminID}/delete-service`, {
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ 
+                adminID: adminId,
+                servID: servId
+            })
+        });
+        const data = awair res.json();
+        if(res.ok){
+            mess(true, data.message);
+            loading.style.display = 'none';
+        } else{
+            mess(false, data.message);
+            loading.style.display = 'none';
+        }
+    } catch (error) {
+        if(error) throw new Error(error); 
+        loading.style.display = 'none';       
     }
-
-
-
-    
 }
