@@ -126,10 +126,10 @@ async function todayService(userID){
 }
 
 async function chart(consist){
-    const bar = document.querySelectorAll('.attbar');
+    const bars = document.querySelectorAll('.attbar');
     const barvalue = document.getElementById('attvalue');
 
-    bar.style.height = `${consist}%`;
+    bars.forEach(bar => bar.style.height = `${consist}%`);
     barvalue.textContent = `${consist}%`;
 }
 

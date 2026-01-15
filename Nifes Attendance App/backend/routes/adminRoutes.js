@@ -25,7 +25,7 @@ adminRoute.get(`/:id/ad-announcements`, (req, res) => {
 adminRoute.get(`/:id/ad-members`, (req, res) => {
     res.sendFile(path.join(frontendPath, 'views', 'admin', 'ad-members.html'));
 });
-adminRoute.get(`/:id/ad-service/details`, (req, res) => {
+adminRoute.get(`/:id/ad-services/details`, (req, res) => {
     res.sendFile(path.join(frontendPath, 'views', 'admin', 'service-details.html'));
 });
 adminRoute.get(`/:id/ad-members/details`, (req, res) => {
@@ -108,7 +108,7 @@ adminRoute.get('/:id/services', async (req, res) => {
 // One Service
 adminRoute.get('/:id/service', async (req, res) => {
     try{
-        const servId = req.query.servId;
+        const servId = req.query.servID;
         const service = await Service.findOne({ id: servId });
         if(!service) return res.status(404).json({ message: 'Service not found!'});
         res.status(200).json({ service: service });
@@ -159,7 +159,7 @@ adminRoute.post('/:id/mark-attendance', async (req, res) => {
 // One Announcement
 adminRoute.get('/:id/announcement', async (req, res) => {
     try{
-        const announceId = req.query.announceId;
+        const announceId = req.query.announceID;
         const announce = await Announce.findOne({ id: announceId });
         if(!announce) return res.status(404).json({ message: 'Announcement not found!'});
         res.status(200).json({ announce: announce });

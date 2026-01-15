@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="space">
-                        <div class="dservice">
+                        <div class="dservice" id="'dservice">
                             <a href="#" title="Service"><img src="../../resources/celeserviceblue.jpg" alt="Service"></a>
                             <div>
                                 <p><b>Title</b>  <span>Celebration Service</span></p>
@@ -91,14 +91,10 @@
                                     <li>0%</li>
                                 </ul>
                                 <div class="barchart">
-                                    <div class="bar"></div>
-                                    <p class="barvalue">0%</p>
+                                    <div class="bar" id="bar"></div>
+                                    <p class="barvalue" id="barvalue">0%</p>
                                 </div>
                             </div>
-                            <!-- <div class="chartdetails">
-                                <p><b>Attendance</b><span>200/250</span></p>
-                                <p><b>Rate</b><span>80%</span></p>
-                            </div> -->
                         </div>
                     </div>
                     
@@ -114,8 +110,8 @@
 
                             <!-- Members -->
                             <section>
-                                <p class="total">Total: 0</p>                                    
-                                <div class="membercontainer">
+                                <p class="total">Total: <span id=totalnum>0</span></p>                                    
+                                <div class="membercontainer" id="totalcon">
                                     <div class="noconcard">
                                         <i class="nocon bi bi-bell-slash-fill"></i>
                                         <i class="nocon">No contents.</i>
@@ -142,12 +138,12 @@
                                 <label for="dmembersearch" title="Back" class="bi bi-caret-left-fill"></label>
                                 <div>
                                     <input type="search" name="dmsearch" id="dmsearch" title="Search" placeholder="Search by name...">
-                                    <button type="button" title="Search" class="bi bi-search"></button>
+                                    <button type="button" title="Search" class="bi bi-search" id="searchattendmembers"></button>
                                 </div>
                             </div>
                             <section>
-                                <p class="total">Result: 0</p>                                
-                                <div class="membercontainer searchtablecontainer">
+                                <p class="total">Result: <span id=resultnum>0</span></p>                                                                
+                                <div class="membercontainer searchtablecontainer" id="resultcon">
                                     <div class="noconcard">
                                         <i class="nocon bi bi-bell-slash-fill"></i>
                                         <i class="nocon">No contents.</i>
@@ -262,6 +258,6 @@
     </main>
 
     <script src="../../js/admin.js"></script>
-    <script src="../../js/servdetails.js"></script>
+    <script src="../../js/serviceDetails.js"></script>
 </body>
 </html>

@@ -222,7 +222,7 @@ async function createService(){
         hours = hours % 12 || 12;
 
         const time = `${hours}:${String(minutes).padStart(2, '0')} ${meridian}`;
-        const servid = Date.now();
+        const servid = String(Date.now());
 
         try{
             const res = await fetch(`/admin/${adminID}/create-service`, {
