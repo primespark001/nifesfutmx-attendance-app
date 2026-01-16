@@ -28,17 +28,12 @@ export async function calculateUser(userId) {
 }
 
 function calcBadge(att, consist, ubadge, unit){
-    if(ubadge === 'devotee'){
-        return 'devotee';
-    }else if(ubadge === 'acsteward' && att >= 18 && consist >= 75){
-        return 'devotee';
-    } else if(ubadge === 'steward' && att >= 15 && consist >= 75){
-        return 'acsteward';
-    } else if(unit !== 'None' && att >= 9 && consist >= 50){
-        return 'steward';
-    } else if(ubadge === 'member' && att >= 6 && consist >= 50){
-        return 'acmember';
-    } else {
-        return 'member';
-    }
+    const dbadges = ubadge === 'devotee' ? 'devotee'
+    : ubadge === 'acsteward' && att >= 18 && consist >= 75 ? 'devotee'
+    : ubadge === 'steward' && att >= 15 && consist >= 75 ? 'acsteward'
+    : unit !== 'None' && att >= 9 && consist >= 50 ? 'steward'
+    : ubadge === 'member' && att >= 6 && consist >= 50 ? 'acmember'
+    : 'member';
+
+    return dbadges;
 } 
