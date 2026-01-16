@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 const frontendPath = path.join(path.dirname(path.dirname(__dirname)), 'frontend');
 
 export async function calculateUser(userId) {
-    continue;
     // try{
     //     const user = await User.findOne({id: userId});
     //     if(!user) return false;
@@ -29,7 +28,6 @@ export async function calculateUser(userId) {
 }
 
 function calcBadge(att, consist, ubadge, unit){
-    continue;
     // if(ubadge === 'devotee'){
     //     return 'devotee';
     // else if(ubadge === 'acsteward' && att >= 18 && consist >= 75){
