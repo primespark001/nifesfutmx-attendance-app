@@ -30,13 +30,13 @@ export async function calculateUser(userId) {
 function calcBadge(att, consist, ubadge, unit){
     if(ubadge === 'devotee'){
         return 'devotee';
-    else if(ubadge == 'acsteward' && att >= 18 && consist >= 75){
+    }else if(ubadge === 'acsteward' && att >= 18 && consist >= 75){
         return 'devotee';
-    } else if(ubadge == 'steward' && att >= 15 && consist >= 75){
+    } else if(ubadge === 'steward' && att >= 15 && consist >= 75){
         return 'acsteward';
-    } else if(unit != 'None' && att >= 9 && consist >= 50){
+    } else if(unit !== 'None' && att >= 9 && consist >= 50){
         return 'steward';
-    } else if(ubadge == 'member' && att >= 6 && consist >= 50){
+    } else if(ubadge === 'member' && att >= 6 && consist >= 50){
         return 'acmember';
     } else {
         return 'member';
