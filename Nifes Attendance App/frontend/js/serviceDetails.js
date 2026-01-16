@@ -97,7 +97,7 @@ async function servMembers(adminID, membersIds){
     
     let members = [];
     totalNum.innerHTML = membersIds.length;
-    membersIds.forEach(userID => {
+    membersIds.forEach(userID, async() => {
         try{
             const res = await fetch(`/admin/${adminID}/member/${userID}`, {method: 'GET'});
             const data = res.json();
