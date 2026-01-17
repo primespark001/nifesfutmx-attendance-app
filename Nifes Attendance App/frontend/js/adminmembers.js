@@ -93,11 +93,13 @@ async function memberSelect(adminID){
 
 const familyFilter = document.getElementById('family');
 familyFilter.onchange = async () => {
+    document.getElementById('searchbar').value = '';
     const adminID = document.getElementById('admin-id').innerHTML;
     await memberSelect(adminID);
 };
 const unitFilter = document.getElementById('unit');
 unitFilter.onchange = async () => {
+    document.getElementById('searchbar').value = '';
     const adminID = document.getElementById('admin-id').innerHTML;
     await memberSelect(adminID);
 };
