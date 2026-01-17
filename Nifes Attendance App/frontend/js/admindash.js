@@ -22,7 +22,7 @@ async function adminDashboard(){
     } else {
         mess(false, 'Unidentified user!');
         setTimeout(async () => {
-            const res = await fetch('/auth/register', { method: "GET"});
+            const res = await fetch('/', { method: "GET"});
             window.location = res.url;
         }, 4000);
     }

@@ -93,7 +93,7 @@ async function editSection(user) {
 
     const userFamily = Array.from(family.options).find(option => option.value === user.family);
     const userUnit = Array.from(unit.options).find(option => option.value === user.unit);
-    const userFaculty = Array.from(faculty.options).find(option => option.value === user.fafacultymily);
+    const userFaculty = Array.from(faculty.options).find(option => option.value === user.faculty);
 
     userFamily.selected = userFamily ? true :  false;
     userUnit.selected = userUnit ? true :  false;

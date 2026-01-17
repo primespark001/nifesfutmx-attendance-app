@@ -8,7 +8,7 @@ async function adminMembers(){
         if(data.admin.isLoggedIn){
             links(data.admin.admin_id); 
             await overview(data.admin.admin_id);
-            await members(data.admin.admin_id);
+            await memberSelect(data.admin.admin_id);
             loading.style.display = 'none';
         } else {
             mess(false, `Please Login!`);
@@ -28,101 +28,79 @@ async function adminMembers(){
 
 adminMembers();
 
-async function members(adminID){
+const adminId = window.location.pathname.split('/')[2];
+const memres = await fetch(`/admin/${adminId}/members`, {method: "GET"});
+const data = await memres.json();
+const members = data.members;
+
+
+async function memberSelect(adminID){
     const memNum = document.getElementById('memnum');
     const memCon = document.getElementById('memcon');
     memCon.innerHTML = loading();
 
+    const name = document.getElementById('searchbar').value.trim();
     const family = document.getElementById('family').value;
     const unit = document.getElementById('unit').value;
 
-    try{
-        const res = await fetch(`/admin/${adminID}/members`, {method: "GET"});
-        const data = await res.json();
-        const members = data.members;
-
-        if(res.ok){
-            
+    if(memres.ok){
+        if(family == 'allfamily'){
+            if(unit == 'allunit'){
+                memCon.innerHTML = '';
+                members.forEach(user => {
+                    const membercard = memCard(adminID, user);
+                    memCon.append(membercard);
+                });
+                memNum.innerHTML = members.length;
+                if(members.length == 0) memCon.innerHTML = noContent();
+            }
+            else {
+                const filteredMembers = members.filter(user => user.unit.toLowerCase() === unit.toLowerCase());
+                memCon.innerHTML = '';
+                filteredMembers.forEach(user => {
+                    const membercard = memCard(adminID, user);
+                    memCon.append(membercard);
+                });
+                memNum.innerHTML = filteredMembers.length;
+                if(filteredMembers.length == 0) memCon.innerHTML = noContent();
+            }
         } else {
-            memCon.innerHTML = noContent();
+            if(unit == 'allunit'){
+                const filteredMembers = members.filter(user => user.family.toLowerCase() === family.toLowerCase());
+                memCon.innerHTML = '';
+                filteredMembers.forEach(user => {
+                    const membercard = memCard(adminID, user);
+                    memCon.append(membercard);
+                });
+                memNum.innerHTML = filteredMembers.length;
+                if(filteredMembers.length == 0) memCon.innerHTML = noContent();
+            } else {
+                const filteredMembers = members.filter(user => user.family.toLowerCase() === family.toLowerCase() && user.unit.toLowerCase() === unit.toLowerCase());
+                memCon.innerHTML = '';
+                filteredMembers.forEach(user => {
+                    const membercard = memCard(adminID, user);
+                    memCon.append(membercard);
+                });
+                memNum.innerHTML = filteredMembers.length;
+                if(filteredMembers.length == 0) memCon.innerHTML = noContent();
+            }
         }
-    } catch (err){
-        if(err) throw new Error(err);
+    
+    } else {
+        memCon.innerHTML = noContent();
     }
 }
 
-async function services(adminID){
-    const allNum = document.getElementById('allnum');
-    const allCon = document.getElementById('allcon');
-    const sunNum = document.getElementById('sunnum');
-    const sunCon = document.getElementById('suncon');
-    const tueNum = document.getElementById('tuenum');
-    const tueCon = document.getElementById('tuecon');
-    const thurNum = document.getElementById('thurnum');
-    const thurCon = document.getElementById('thurcon');
-
-    allCon.innerHTML = loading();
-    sunCon.innerHTML = loading();
-    tueCon.innerHTML = loading();
-    thurCon.innerHTML = loading();
-
-    const searchBtn = document.getElementById('searchbtn');
-    searchBtn.onclick = searchServ(adminID);
-
-    try{
-        const res = await fetch(`/admin/${adminID}/services`, {method: "GET"});
-        const data = await res.json();
-
-
-        if(res.ok){
-            const allServ = data.services;
-            const sunServ = allServ.filter(serv => serv.date.includes('Sun'));
-            const tueServ = allServ.filter(serv => serv.date.includes('Tue'));
-            const thurServ = allServ.filter(serv => serv.date.includes('Thu'));
-
-            allCon.innerHTML = '';
-            sunCon.innerHTML = '';
-            tueCon.innerHTML = '';
-            thurCon.innerHTML ='';
-            
-            allNum.innerHTML = allServ.length;
-            sunNum.innerHTML = sunServ.length;
-            tueNum.innerHTML = tueServ.length;
-            thurNum.innerHTML = thurServ.length;
-            
-            if(allServ.length == 0) allCon.innerHTML = noContent();
-            if(sunServ.length == 0) sunCon.innerHTML = noContent();
-            if(tueServ.length == 0) tueCon.innerHTML = noContent();
-            if(thurServ.length == 0) thurCon.innerHTML = noContent();
-
-            allServ.forEach(serv => {
-                const servcard = servCard(serv);
-                allCon.append(servcard);
-            });
-            sunServ.forEach(serv => {
-                const servcard = servCard(serv);
-                sunCon.append(servcard);
-            });
-            tueServ.forEach(serv => {
-                const servcard = servCard(serv);
-                tueCon.append(servcard);
-            });
-            thurServ.forEach(serv => {
-                const servcard = servCard(serv);
-                thurCon.append(servcard);
-            });            
-
-        } else {
-            allCon.innerHTML = noContent();
-            sunCon.innerHTML = noContent();
-            tueCon.innerHTML = noContent();
-            thurCon.innerHTML = noContent();
-        }
-
-    } catch (err){
-        if(err) throw new Error(err);
-    }
-}
+const familyFilter = document.getElementById('family');
+familyFilter.onchange = async () => {
+    const adminID = document.getElementById('admin-id').innerHTML;
+    await memberSelect(adminID);
+};
+const unitFilter = document.getElementById('unit');
+unitFilter.onchange = async () => {
+    const adminID = document.getElementById('admin-id').innerHTML;
+    await memberSelect(adminID);
+};
 
 function memCard(adminID, user){
     return `
@@ -142,11 +120,38 @@ function memCard(adminID, user){
     `;
 }
 
-async function searchServ(adminID){
-    const searchInput = document.getElementById('dsearch').value.trim();
-    const searchCon = document.getElementById('searchcon');
-    const searchNum = document.getElementById('searchnum');
+async function searchMem(){
+    const adminID = document.getElementById('admin-id').innerHTML;
 
+    const memNum = document.getElementById('memnum');
+    const memCon = document.getElementById('memcon');
+    memCon.innerHTML = loading();
+
+    const name = document.getElementById('searchbar').value.trim();
+    const family = document.getElementById('family');
+    const unit = document.getElementById('unit');
+    
+    family.selectedIndex = 0;
+    unit.selectedIndex = 0;
+
+    if(name){
+        const filteredMembers = members.filter(user => {
+            const fullName = `${user.surname} ${user.firstname} ${user.othername}`.toLowerCase();
+            return fullName.includes(name.toLowerCase());
+        });
+        memCon.innerHTML = '';
+        filteredMembers.forEach(user => {
+            const membercard = memCard(adminID, user);
+            memCon.append(membercard);
+        });
+        memNum.innerHTML = filteredMembers.length;
+        if(filteredMembers.length == 0) memCon.innerHTML = noContent();
+    }
+    
+    
+    
+    
+    
     searchCon.innerHTML = loading();
 
     if(!searchInput){
@@ -176,20 +181,6 @@ async function searchServ(adminID){
     }
 }
 
-async function gotoServDetails(servID){
-    const loading = document.getElementById("loading");
-    loading.style.display = 'flex';
-
-    const adminID = document.getElementById('admin-id').innerHTML;
-    const res = await fetch(`/admin/${adminID}/ad-services/details?servID=${servID}`, {method: 'GET'});
-    if(res.ok){
-        loading.style.display = 'none';
-        window.location = res.url;
-    } else {
-        mess(false, 'An error occured. Please try again.');
-        loading.style.display = 'none';
-    }
-}
 
 const imgInput = document.getElementById('editimg');
 imgInput.onchange = (event) => {
