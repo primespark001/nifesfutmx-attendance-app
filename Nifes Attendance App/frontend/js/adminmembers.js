@@ -1,4 +1,4 @@
-async function adminServices(){
+async function adminMembers(){
     const loading = document.getElementById("loading");
     loading.style.display = 'flex';
 
@@ -8,8 +8,7 @@ async function adminServices(){
         if(data.admin.isLoggedIn){
             links(data.admin.admin_id); 
             await overview(data.admin.admin_id);
-            await todayService(data.admin.admin_id);
-            await services(data.admin.admin_id);
+            await members(data.admin.admin_id);
             loading.style.display = 'none';
         } else {
             mess(false, `Please Login!`);
@@ -21,29 +20,31 @@ async function adminServices(){
     } else {
         mess(false, 'Unidentified user!');
         setTimeout(async () => {
-            const res = await fetch('/auth/register', { method: "GET"});
+            const res = await fetch('/', { method: "GET"});
             window.location = res.url;
         }, 4000);
     }
 }
 
-adminServices();
+adminMembers();
 
-async function todayService(adminID){
-    const servConLink = document.getElementById('todayservlink');
-    const servCon = document.getElementById('todayserv');
-    servCon.innerHTML = loading();
+async function members(adminID){
+    const memNum = document.getElementById('memnum');
+    const memCon = document.getElementById('memcon');
+    memCon.innerHTML = loading();
+
+    const family = document.getElementById('family').value;
+    const unit = document.getElementById('unit').value;
+
     try{
-        const res = await fetch(`/admin/${adminID}/todayservice`, {method: "GET"});
+        const res = await fetch(`/admin/${adminID}/members`, {method: "GET"});
         const data = await res.json();
-        const service = data.service;
+        const members = data.members;
 
         if(res.ok){
-            servConLink.href = `/admin/${adminID}/ad-services/details?servID=${service.id}`;
-            servCon.innerHTML = `<img src="${service.img}" alt="Service">`;
+            
         } else {
-            servConLink.disabled = true;
-            servCon.innerHTML = noContent();
+            memCon.innerHTML = noContent();
         }
     } catch (err){
         if(err) throw new Error(err);
@@ -123,18 +124,21 @@ async function services(adminID){
     }
 }
 
-function servCard(service){
+function memCard(adminID, user){
     return `
-        <div class="tabledata" onclick='gotoServDetails(${service.id})'>
+        <a class="tabledata" href="/admin/${adminID}/ad-members/details?userID=${user.id}">
             <div>
-                <img src="${service.img}" alt=".">
-                <p>${service.title}</p>
+                <aside class="img">
+                    <img src="${user.profileImgUrl}" alt=".">
+                    <p class="imgfallback">${user.firstname.charAt(0).toUpperCase()}</p>
+                </aside>
+                <p>${user.surname} ${user.firstname} ${user.othername}</p>
             </div>
-            <b>${service.date}</b>
-            <b>${service.time}</b>
-            <b>${service.attendance.length}</b>
-            <b class="tdstatus ${service.status.toLowerCase()}">${service.status.toUpperCase()}</b>
-        </div>
+            <b>${user.email}</b>
+            <b>${user.family}</b>
+            <b>${user.unit}</b>
+            <b class="tdstatus badge ${user.badge.toLowerCase()} ${badge(user.badge)}"></b>
+        </a>
     `;
 }
 

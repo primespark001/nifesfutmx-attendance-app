@@ -40,139 +40,15 @@
             <p id="admin-id"></p>
         </div>
         <section class="section">
-            <!-- Members -->
-            <div class="content" id="members">
-                <div class="breadcrumb">
-                    <a href="#" class="links" title="ad-dashboard">Dashboard</a> >
-                    <a href="ad-members.html#members">Members</a>
-                </div>
-                <div class="main">
-                    <div class="overview">                     
-                        <div>
-                            <b>Members</b>
-                            <h2>
-                                <i class="fas fa-users"></i>
-                                <p id="ovmem">0</p>
-                            </h2>
-                            <a href="#" class="links" title="ad-members">View</a>
-                        </div>
-                        <div>
-                            <b>Birthdays</b>
-                            <h2>
-                                <i class="bi bi-cake2-fill"></i>
-                                <p id="ovbirth">0</p>
-                            </h2>
-                            <a href="#" class="links" title="ad-members">View</a>
-                        </div>
-                        <div>
-                            <b>Services</b>
-                            <h2>
-                                <i class="bi bi-calendar-day-fill"></i>
-                                <p id="ovserv">0</p>
-                            </h2>
-                            <a href="#" class="links" title="ad-services">View</a>
-                        </div>
-                        <div>
-                            <b>Announcements</b>
-                            <h2>
-                                <i class="bi bi-megaphone-fill"></i>
-                                <p id="ovannounce">0</p>
-                            </h2>
-                            <a href="#" class="links" title="ad-announcements">View</a>
-                        </div>                                                                
-                    </div>
-
-                    <div class="dsec1">
-                        <b>Members</b>
-                        <div class="dtop">
-                            <div class="dsearchcontainer">
-                                <input type="search" name="searchbar" id="searchbar" placeholder="Search members...">
-                                <button type="button" class="fas fa-search" title="search"></button>
-                            </div>
-                            <div class="dfilters">
-                                <i class="fas fa-filter"> :</i>
-                                <select name="family" id="family" title="family">
-                                    <option value="">Family (all)</option>
-                                    <option value="dominion">Dominion</option>
-                                    <option value="beacon">Beacon</option>
-                                    <option value="glory">Glory</option>
-                                    <option value="rehoboth">Rehoboth</option>
-                                </select>
-                                <select name="unit" id="unit" title="unit">
-                                    <option value="">Unit (all)</option>
-                                    <option value="evangelism">Evangelism Unit</option>
-                                    <option value="bible-study">Bible Study Unit</option>
-                                    <option value="prayer">Prayer Unit</option>
-                                    <option value="tlh">The Lord's Habitation (Choir Unit)</option>
-                                    <option value="press">Kabod Media (Press Unit)</option>
-                                    <option value="drama">The Potter's Vessel (Drama Unit)</option>
-                                    <option value="technical">Technical Unit</option>
-                                    <option value="ushering">Ushering Unit</option>
-                                    <option value="none">None</option>
-                                </select>
-                                <select name="badge" id="badge" title="badge">
-                                    <option value="">Badge (all)</option>
-                                    <option value="member">MEMBER</option>
-                                    <option value="acmember">AC-MEMBER</option>
-                                    <option value="steward">STEWARD</option>
-                                    <option value="acsteward">AC-STEWARD</option>
-                                    <option value="devotee">DEVOTEE</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="dmemberlist">
-                            <p class="total">Total: 0</p>        
-                            <ul class="tableheader">
-                                <li>Name</li>
-                                <li>Email</li>
-                                <li>Family</li>
-                                <li>Unit</li>
-                                <li class="bi bi-star-fill"></li>
-                            </ul>
-                            <div class="tablecontainer">
-                                <div class="noconcard">
-                                    <i class="nocon bi bi-bell-slash-fill"></i>
-                                    <i class="nocon">No contents.</i>
-                                </div>
-                                <!-- <div class="tabledata">
-                                    <div>
-                                        <aside class="img">
-                                            <img src="" alt=".">
-                                            <p class="imgfallback">M</p>
-                                        </aside>
-                                        <p>Prime Spark</p>
-                                    </div>
-                                    <b>example@gmail.com</b>
-                                    <b>Glory</b>
-                                    <b>Press</b>
-                                    <b class="tdstatus badge devotee bi bi-trophy-fill"></b>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>  
-                    
-                    <!-- <div class="buttons">
-                        <a href="#">Create Member</a>
-                        <button type="button">Export CSV</button>
-                    </div> -->
-
-                    
-                    <div class="last">&copy; NIFES FUT Minna - All rights reserved.<br>
-                        Building tomorrow's leaders today...
-                    </div>
-
-                </div>
-            </div>
-
             <!-- Details -->
             <div class="content" id="details">
                 <div class="breadcrumb">
                     <a href="#" class="links" title="ad-dashboard">Dashboard</a> >
-                    <a href="#members">Members</a> >
-                    <a href="#details">Prime</a>
+                    <a href="#" class="links" title="ad-members">Members</a> >
+                    <a href="#details">Details</a>
                 </div>
                 <div class="main">
-                    <h4><a href="#members" title="back" class="back fas fa-caret-left"></a> Prime</h4>
+                    <h4><a href="#" title="ad-members" class="links back fas fa-caret-left"></a> <span>Prime</span></h4>
              
                     <div class="dprofdetails">
                         <div class="memprofile">
@@ -217,32 +93,11 @@
                                         <li>Nifes</li>
                                         <li>
                                             <b>Family</b>
-                                            <span>
-                                                <select title="Family" readonly>
-                                                    <option value="">Member Family</option>
-                                                    <option value="dominion">Dominion Family</option>
-                                                    <option value="beacon">Beacon Family</option>
-                                                    <option value="glory">Glory Family</option>
-                                                    <option value="rehoboth">Rehoboth Family</option>
-                                                </select>
-                                            </span>
+                                            <span>Member Family</span>
                                         </li>
                                         <li>
                                             <b>Unit</b>
-                                            <span>
-                                                <select title="Unit" readonly>                                                    
-                                                    <option value="">Member Unit</option>
-                                                    <option value="evangelism">Evangelism Unit</option>
-                                                    <option value="bible-study">Bible Study Unit</option>
-                                                    <option value="prayer">Prayer Unit</option>
-                                                    <option value="tlh">The Lord's Habitation (Choir Unit)</option>
-                                                    <option value="press">Kabod Media (Press Unit)</option>
-                                                    <option value="drama">The Potter's Vessel (Drama Unit)</option>
-                                                    <option value="technical">Technical Unit</option>
-                                                    <option value="ushering">Ushering Unit</option>
-                                                    <option value="none">None</option>
-                                                </select>
-                                            </span>
+                                            <span>Member Unit</span>
                                         </li>
                                     </ul>
                                     <ul>
@@ -329,9 +184,7 @@
                                     </div> -->
                                 </div>
                             </div>
-                        </div>
-
-                        
+                        </div>                        
                     </div>
 
 
@@ -349,7 +202,7 @@
                                 <b>PERSONAL</b>
                                 <div>
                                     <label for="email">Email <span>Permanent</span></label>
-                                    <input type="email" name="email" id="email" readonly>
+                                    <input type="email" name="email" id="email" readonly disabled>
                                 </div>
                                 <div>
                                     <label for="surname">Surname</label>

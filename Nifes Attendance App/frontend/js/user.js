@@ -156,8 +156,8 @@ async function topprofile(user){
     const badge = badge(user.badge);
     userid.innerHTML = user.id;
     userbadge.class = `badge ${badge} ${user.badge}`;
-    userinit.forEach(init => init.innerHTML = user.name.charAt(0).toUpperCase());
-    userimg.forEach(img => img.url = user.imgurl);
+    userinit.forEach(init => init.innerHTML = user.firstname.charAt(0).toUpperCase());
+    userimg.forEach(img => img.url = user.profileImgUrl);
     username.forEach(name => name.innerHTML = user.firstname);
     userfullname.innerHTML = `${user.surname} ${user.firstname} ${user.othername}`;
     useremail.innerHTML = user.email;

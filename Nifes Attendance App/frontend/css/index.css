@@ -42,17 +42,18 @@
     width: 7px;
 }
 ::-webkit-scrollbar-track{
-    background-color: transparent;
+    background-color: var(--backgroundcolor);
 }
 ::-webkit-scrollbar-thumb{
-    background-color: var(--shadowcolor);
+    background-color: var(--bordercolor);
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background-color: var(--primarycolor);
+    background-color: var(--textcolor);
+    cursor: pointer;
 }
 ::-webkit-scrollbar-gutter{
-    background-color: transparent;
+    background-color: var(--backgroundcolor);
 }
 
 body{

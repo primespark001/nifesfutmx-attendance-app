@@ -67,6 +67,22 @@ function loading(){
     ` ;
 }
 
+function badge(type){
+    switch(type){
+        case 'member':
+            return 'bi bi-star-fill';
+        case 'acmember':
+            return 'bi bi-award-fill';
+        case 'steward':
+            return 'fas fa-award';
+        case 'acsteward':
+            return 'fas fa-medal';
+        case 'devotee':
+            return 'bi bi-trophy-fill';
+        default: return 'bi bi-star-fill';
+    }
+}
+
 // Overview
 async function overview(adminID) {
     const ovmem = document.getElementById('ovmem');
@@ -121,14 +137,14 @@ async function logout(){
     const loading = document.getElementById("loading");
     loading.style.display = "flex";
 
-    const userid = document.getElementById('userid').innerHTML;
+    const adminID = document.getElementById('admin-id').innerHTML;
 
     try{
-        const res = await fetch(`/user/${userid}/logout`, {
+        const res = await fetch(`/admin/${adminID}/logout`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ 
-                id: userid
+                id: adminID
             })
         });
 
@@ -137,41 +153,7 @@ async function logout(){
         if(res.ok){
             mess(true, data.message);
             setTimeout(async () => {
-                const res = await fetch(`/auth/login`, {method: "GET"});
-                window.location = res.url;
-            }, 4000);
-            
-        } else {
-            mess(false, data.message);
-            loading.style.display = "none";
-        }
-    } catch(err){
-        if(err) mess(false, "Server Error. Refresh the browser and try again.");
-        loading.style.display = "none";
-    }
-}
-
-async function deleteAcct(){
-    const loading = document.getElementById("loading");
-    loading.style.display = "flex";
-
-    const userid = document.getElementById('userid').innerHTML;
-
-    try{
-        const res = await fetch(`/user/${userid}/delete-acct`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
-                id: userid
-            })
-        });
-
-        const data = await res.json();
-        
-        if(res.ok){
-            mess(true, data.message);
-            setTimeout(async () => {
-                const res = await fetch(`/auth/login`, {method: "GET"});
+                const res = await fetch(`/`, {method: "GET"});
                 window.location = res.url;
             }, 4000);
             
